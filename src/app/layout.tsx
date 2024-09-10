@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Script from 'next/script'; 
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,13 +35,12 @@ export const metadata: Metadata = {
     "venda de joias",
     "joias de ouro",
     "ouro 18k",
-
   ],
   openGraph: {
     title: "Guian Joias",
     description: "Guian Joias oferece joias elegantes e sofisticadas para todas as ocasiões. Descubra anéis, pulseiras e mais, com design impecável e qualidade excepcional. Encontre o presente perfeito na Guian Joias.",
     siteName: "Guian Joias",
-    url: "https://guianjoias.com;br",
+    url: "https://guianjoias.com.br", 
     locale: "pt_BR",
   },
   twitter: {
@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -59,12 +60,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
-
-<Footer/>
-        <script src="./node_modules/preline/dist/preline.js"></script>
-
+        <Footer />
+        <Script
+          src="/node_modules/preline/dist/preline.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

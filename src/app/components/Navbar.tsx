@@ -1,4 +1,3 @@
-import { LuSearch } from "react-icons/lu";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa"; 
 import Image from "next/image";
