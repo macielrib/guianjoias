@@ -105,7 +105,7 @@ const CardProducts: React.FC = () => {
         Com desconto
       </div>
 
-      <h2 className="text-white font-medium font-poppins text-4xl sm:text-6xl leading-tight mb-4">
+      <h2 className="text-white font-medium font-poppins text-4xl md:text-5xl leading-tight mb-4">
         Ofertas para você em até <b>15% OFF</b>
       </h2>
 

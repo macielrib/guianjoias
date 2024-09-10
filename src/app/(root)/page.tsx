@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <div className="relative -mt-2 w-full h-[64vh] flex items-center justify-center">
         <Image
-          src="/assets/megasale.jpg"
+          src="/assets/hero-background.png"
           alt="Hero Background"
           layout="fill"
           objectFit="cover"

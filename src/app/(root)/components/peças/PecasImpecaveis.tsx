@@ -102,14 +102,14 @@ const PecasImpecaveis: React.FC = () => {
   return (
     <section className="bg-black py-16 px-4">
       <div className="max-w-7xl mx-auto text-center md:text-left">
-        <div className="text-[#F2DD52] font-poppins text-base font-semibold mb-2">
+        <div className="text-[#F2DD52] font-poppins text-base font-medium mb-2">
           Peças impecáveis
         </div>
 
-        <h2 className="text-white font-poppins font-medium text-4xl leading-tight mb-4">
+        <h2 className="text-white font-poppins font-medium text-4xl md:text-5xl leading-tight mb-4">
           Estilo e sofisticação
         </h2>
-        <p className="text-[#C7C2BB] font-poppins text-sm leading-6 mb-8">
+        <p className="text-[#C7C2BB] font-poppins text-sm md:text-md leading-6 mb-8">
           In beatae reiciendis et quos delectus et laboriosam illum sed veniam
           alias aut ullam enim.
         </p>
