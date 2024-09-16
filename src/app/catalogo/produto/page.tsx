@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaChevronDown, FaCheck, FaTruck } from "react-icons/fa";
 import Link from "next/link";
+import CartSidebar from "@/app/components/CartSidebar";
 
 const products = [
   {
@@ -92,6 +93,11 @@ const ProductPage = () => {
   function handleImageClick(img: string) {
     setMainImage(img);
   }
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -221,9 +227,15 @@ const ProductPage = () => {
           </div>
 
           {/* Botão Adicionar ao Carrinho */}
-          <button className="bg-[#F2DD52] text-black font-poppins font-medium text-[15px] w-[250px] h-[46px] mt-4 rounded-lg transition-opacity hover:opacity-90">
-            Adicionar ao carrinho
+          <button
+            onClick={toggleCart}
+            className="bg-[#F2DD52] text-black font-poppins font-medium text-[15px] w-[250px] h-[46px] mt-4 rounded-lg transition-opacity hover:opacity-90"
+          >
+            Adicionar ao Carrinho
           </button>
+
+          {/* Chamar o CartSidebar */}
+          <CartSidebar isOpen={isCartOpen} toggleCart={toggleCart} />
 
           {/* Mensagem abaixo do botão */}
           <p className="text-[#4F4F4F] font-poppins text-sm mt-4">
@@ -235,63 +247,66 @@ const ProductPage = () => {
             <p className="text-white font-poppins text-md">
               Calcular o valor da entrega
             </p>
-        <div className="relative mt-2 flex items-center">
-      <input
-        type="text"
-        value={cep}
-        onChange={handleCepChange}
-        placeholder="Digite o seu CEP"
-        className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-2 px-3 pl-10 text-[#4F4F4F] font-poppins font-normal text-sm w-[250px] h-[39px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
-        maxLength={9} // Limita a entrada a 9 caracteres
-      />
-      <FaTruck className="absolute left-3 text-[#DCC373] text-xl" />
-      <button className="bg-[#F2DD52] text-black font-poppins font-medium text-sm rounded-lg py-2 px-4 ml-2">
-        Calcular
-      </button>
-    </div>
+            <div className="relative mt-2 flex items-center">
+              <input
+                type="text"
+                value={cep}
+                onChange={handleCepChange}
+                placeholder="Digite o seu CEP"
+                className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-2 px-3 pl-10 text-[#4F4F4F] font-poppins font-normal text-sm w-[250px] h-[39px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+                maxLength={9} // Limita a entrada a 9 caracteres
+              />
+              <FaTruck className="absolute left-3 text-[#DCC373] text-xl" />
+              <button className="bg-[#F2DD52] text-black font-poppins font-medium text-sm rounded-lg py-2 px-4 ml-2">
+                Calcular
+              </button>
+            </div>
           </div>
 
           {/* Descrição do Produto */}
           <div className="mt-8">
-      <p className="text-[#FDFBE9] font-poppins text-md font-light mb-4">
-        Descrição do produto
-      </p>
-      <p className="text-[#FDFBE9] font-poppins text-sm font-light leading-[20px] mb-4">
-        Lorem ipsum dolor sit amet. Non odio illo et officia iusto aut minima voluptatem. {/* Aumentando o tamanho da descrição */}
-      </p>
-      <ul className="text-[#FDFBE9] font-poppins text-sm font-normal list-disc ml-6 mt-2">
-        <li>Lorem ipsum dolor list</li>
-        <li
-          className={`transition-all duration-300 ${
-            showFullDescription ? 'opacity-100 bg-transparent' : 'opacity-50 bg-black'
-          }`}
-        >
-          Lorem ipsum sublist
-        </li>
-      </ul>
-      {!showFullDescription && (
-        <button
-          onClick={() => setShowFullDescription(true)}
-          className="text-[#F2DD52] font-poppins font-medium text-sm mt-4 float-right"
-        >
-          Ver mais
-        </button>
-      )}
-      {showFullDescription && (
-        <>
-          <ul className="text-[#FDFBE9] font-poppins text-sm font-normal list-disc ml-6">
-            <li>Lorem ipsum dolor list</li>
-            <li>Lorem ipsum sublist</li>
-          </ul>
-          <button
-            onClick={() => setShowFullDescription(false)}
-            className="text-[#F2DD52] font-poppins font-medium text-sm mt-4 float-right"
-          >
-            Ver menos
-          </button>
-        </>
-      )}
-    </div>
+            <p className="text-[#FDFBE9] font-poppins text-md font-light mb-4">
+              Descrição do produto
+            </p>
+            <p className="text-[#FDFBE9] font-poppins text-sm font-light leading-[20px] mb-4">
+              Lorem ipsum dolor sit amet. Non odio illo et officia iusto aut
+              minima voluptatem. {/* Aumentando o tamanho da descrição */}
+            </p>
+            <ul className="text-[#FDFBE9] font-poppins text-sm font-normal list-disc ml-6 mt-2">
+              <li>Lorem ipsum dolor list</li>
+              <li
+                className={`transition-all duration-300 ${
+                  showFullDescription
+                    ? "opacity-100 bg-transparent"
+                    : "opacity-50 bg-black"
+                }`}
+              >
+                Lorem ipsum sublist
+              </li>
+            </ul>
+            {!showFullDescription && (
+              <button
+                onClick={() => setShowFullDescription(true)}
+                className="text-[#F2DD52] font-poppins font-medium text-sm mt-4 float-right"
+              >
+                Ver mais
+              </button>
+            )}
+            {showFullDescription && (
+              <>
+                <ul className="text-[#FDFBE9] font-poppins text-sm font-normal list-disc ml-6">
+                  <li>Lorem ipsum dolor list</li>
+                  <li>Lorem ipsum sublist</li>
+                </ul>
+                <button
+                  onClick={() => setShowFullDescription(false)}
+                  className="text-[#F2DD52] font-poppins font-medium text-sm mt-4 float-right"
+                >
+                  Ver menos
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </div>
 
@@ -305,11 +320,13 @@ const ProductPage = () => {
               <CardProduct key={product.id} product={product} />
             ))}
           </div>
-        <Link href='/catalogo'>  <button className="py-2  absolute -bottom-20 right-20 bg-transparent text-[#F2DD52] border-none text-sm font-poppins font-medium px-4 mb-6 mr-6 transition duration-300 hover:-translate-y-1">
-          ver catálogo completo
-        </button></Link>
+          <Link href="/catalogo">
+            {" "}
+            <button className="py-2  absolute -bottom-20 right-20 bg-transparent text-[#F2DD52] border-none text-sm font-poppins font-medium px-4 mb-6 mr-6 transition duration-300 hover:-translate-y-1">
+              ver catálogo completo
+            </button>
+          </Link>
         </div>
-     
       </div>
     </>
   );
