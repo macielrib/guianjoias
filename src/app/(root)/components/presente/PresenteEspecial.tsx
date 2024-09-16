@@ -19,14 +19,14 @@ const PresenteEspecial: React.FC = () => {
         </div>
 
         <div className="relative z-10 md:ml-36 max-w-2xl mx-auto text-center md:text-left">
-          <h2 className="text-[#FDFBE9] font-poppins font-medium text-3xl md:text-5xl leading-tight mb-8">
+          <h2 className="text-[#FDFBE9] font-poppins font-medium text-3xl md:text-4xl leading-tight mb-8">
             Encontre <span className="text-[#F2DD52]">um presente</span>
             <br />
             <span className="text-[#F2DD52]">especial</span> para aquela
             <br /> <span className="text-[#F2DD52]">pessoa especial.</span>
           </h2>
 
-          <p className="text-[#C7C2BB] font-poppins text-md md:text-md mb-8">
+          <p className="text-[#C7C2BB] font-poppins text-md md:text-lg mb-8">
             Vai casar? Encontre o anel perfeito para a sua pessoa especial.
           </p>
 

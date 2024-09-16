@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const OfertasImperdiveis: React.FC = () => {
   return (
-    <section className="bg-black py-16 flex flex-col md:flex-row items-center justify-between px-12 md:px-24">
+    <section className="bg-black py-16 flex flex-col md:flex-row items-center justify-between px-12 md:px-28">
       
       <div className="w-full md:w-1/2 flex justify-center md:justify-start md:px-4 transition duration-300 hover:scale-105">
         <Image

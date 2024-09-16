@@ -17,8 +17,8 @@ const Navigation = () => {
           Início
         </Link>
         <Link
-          href="/catalog"
-          className={`text-md font-normal font-poppins transition duration-300 hover:text-[#F2DD52] hover:-translate-y-1s ${pathname === '/catalog' ? 'text-[#F2DD52]' : 'text-[#4F4F4F]'}`}
+          href="/catalogo"
+          className={`text-md font-normal font-poppins transition duration-300 hover:text-[#F2DD52] hover:-translate-y-1s ${pathname === '/catalogo' ? 'text-[#F2DD52]' : 'text-[#4F4F4F]'}`}
         >
           Catálogo
         </Link>

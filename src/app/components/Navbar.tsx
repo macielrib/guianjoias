@@ -21,7 +21,7 @@ const Navbar = () => {
             <div className="relative">
             <input
   type="email"
-  className="peer py-3 pe-0 ps-10 block w-full bg-transparent border-0 border-b-2 border-b-gray-200 text-sm focus:border-b-[#F2DD52] !important focus:ring-0 text-white font-poppins placeholder-gray-400 disabled:opacity-50 disabled:pointer-events-none"
+  className="peer py-3 pe-0 ps-10 block w-full bg-transparent border-0 border-b-2 text-sm focus:border-[#F2DD52] focus:outline-none !important  text-white font-poppins placeholder-gray-400 "
   placeholder="Que tipo de joia você está buscando?"
 />
 
