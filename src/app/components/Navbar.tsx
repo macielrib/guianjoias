@@ -1,4 +1,4 @@
-'use client'; // Certifique-se de que isso está presente para habilitar o uso de hooks
+'use client'; 
 
 import { IoBagHandleOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
@@ -12,10 +12,8 @@ import { useState } from "react";
 import CartSidebar from "./CartSidebar";
 
 const Navbar = () => {
-  // Estado para controlar a visibilidade do carrinho
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Função para alternar a visibilidade do carrinho
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };

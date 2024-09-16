@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "./Navbar";
 import CartSidebar from "./CartSidebar";
 
 const Cart = () => {

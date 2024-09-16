@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { FaTrashAlt, FaMinus, FaPlus, FaRegTrashAlt } from "react-icons/fa";
+import {  FaMinus, FaPlus, FaRegTrashAlt } from "react-icons/fa";
 import { LiaTagsSolid } from "react-icons/lia";
 
 const CartSidebar = ({
