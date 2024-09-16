@@ -80,7 +80,7 @@ const ProductPage = () => {
 
   const [cep, setCep] = useState("");
 
-  const handleCepChange = (e: { target: { value: any; }; }) => {
+  const handleCepChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const formattedCep = value
       .replace(/\D/g, "") // Remove all non-numeric characters
@@ -89,9 +89,9 @@ const ProductPage = () => {
     setCep(formattedCep);
   };
 
-  const handleImageClick = (img: string) => {
+  function handleImageClick(img: string) {
     setMainImage(img);
-  };
+  }
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
