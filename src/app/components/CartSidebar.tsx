@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { FaTrashAlt, FaMinus, FaPlus, FaRegTrashAlt } from "react-icons/fa";
 import { LiaTagsSolid } from "react-icons/lia";
@@ -21,27 +21,14 @@ const CartSidebar = ({
       quantity: 1,
       image: "/assets/joias/joia3.png",
     },
-    {
-      id: 2,
-      name: "Excepteur sint occaecat cupidatat non proident 18k 1,4mm",
-      size: "A",
-      price: 2500.0,
-      quantity: 1,
-      image: "/assets/joias/joia3.png",
-    },
-    {
-      id: 3,
-      name: "Excepteur sint occaecat cupidatat non proident 18k 1,4mm",
-      size: "A",
-      price: 2500.0,
-      quantity: 1,
-      image: "/assets/joias/joia3.png",
-    },
+    // Outros itens...
   ]);
 
   const [coupon, setCoupon] = useState("");
   const [couponApplied, setCouponApplied] = useState(false);
   const [buttonHovered, setButtonHovered] = useState(false);
+
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   const handleCouponChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCoupon(e.target.value);
@@ -75,10 +62,34 @@ const CartSidebar = ({
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+      toggleCart();
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <>
+      {/* Overlay */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={toggleCart} />
+      )}
+
       {/* Carrinho Sidebar */}
       <div
+        ref={sidebarRef}
         className={`fixed top-0 right-0 w-[590px] h-[100vh] bg-[#0B0B0B] transition-transform duration-500 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
@@ -208,9 +219,6 @@ const CartSidebar = ({
               <p className="text-white font-poppins text-md font-normal">
                 Valor total do seu pedido
               </p>
-              <p className="text-[#4F4F4F] font-poppins font-medium text-sm">
-                R$ 7.600,00
-              </p>
               <p className="text-[#F2DD52] font-poppins font-normal text-lg">
                 R$ 7.500,00
               </p>
@@ -250,3 +258,4 @@ const CartSidebar = ({
 };
 
 export default CartSidebar;
+

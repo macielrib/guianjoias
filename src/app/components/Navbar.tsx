@@ -68,8 +68,8 @@ const Navbar = () => {
               </p>
             </button>
 
-            {/* Exibindo o CartSidebar se o carrinho estiver aberto */}
-            {isCartOpen && <CartSidebar isOpen={isCartOpen} toggleCart={toggleCart} />}
+            <CartSidebar isOpen={isCartOpen} toggleCart={toggleCart} />
+
 
             <Link
               href="/user"
