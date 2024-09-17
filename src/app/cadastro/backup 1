@@ -1,0 +1,146 @@
+<!-- import React from "react";
+
+const SignUpPage = () => {
+  return (
+    <>
+      {/* Background Radial */}
+      <div
+        className="-mt-2 min-h-screen w-full mx-auto bg-black flex items-center relative"
+        style={{
+          width: "1530px",
+          height: "300px",
+          backgroundColor: "#000",
+          background: radial-gradient(124.33% 124.33% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(255, 199, 0, 0.21) 100%),
+          backgroundSize: "110% 200%",
+          backgroundPosition: "top left, top right, bottom left, bottom right",
+        }}
+      >
+        {/* Página de Criação de Conta */}
+        <div className="relative w-full max-w-7xl mx-auto items-center flex py-4 md:-top-24">
+          {/* Área Esquerda para o Título, Descrição e Stepper */}
+          <div className="w-full max-w-lg text-start flex flex-col items-start pr-4">
+            {/* Título */}
+            <h1 className="text-[#FBF7C6] font-poppins text-5xl font-normal mb-4 w-full">
+              Crie a sua conta para acessar o site!
+            </h1>
+
+            {/* Descrição */}
+            <p className="text-[#606060] font-poppins text-xl font-normal mb-8">
+              Diga-nos como podemos nos referir a você, durante a utilização deste website.
+            </p>
+
+            {/* Stepper */}
+            <div className="flex items-center w-full max-w-sm mb-8">
+              {/* Número 1 */}
+              <div className="flex flex-col items-center">
+                <div className="flex items-center justify-center z-20 w-16 h-16 bg-[#ECC923] text-[#3E210A] rounded-full font-poppins text-2xl font-bold">
+                  01
+                </div>
+                <p className="text-[#FBF7C6] mt-2 text-lg font-medium">
+                  Dados pessoais
+                </p>
+              </div>
+
+              {/* Conector Branco */}
+              <div className="flex-1 h-3 md:-mt-8 bg-white z-0 -mx-12 rounded"></div>
+
+              {/* Número 2 */}
+              <div className="flex flex-col items-center">
+                <div className="flex items-center justify-center w-16 z-20 h-16 bg-[#4F4F4F] text-[#171717] rounded-full font-poppins text-2xl font-bold">
+                  02
+                </div>
+                <p className="text-[#FBF7C6] mt-2 text-lg font-medium">
+                  Dados de entrega
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Divisória Central */}
+          <div
+            className="w-px h-[162px] bg-[#D9D9D9] absolute top-1/2 transform -translate-y-1/2"
+            style={{ left: "calc(50% - 1px)" }}
+          ></div>
+
+          {/* Área Direita para Inputs e Campos */}
+          <div className="w-full items-start max-w-2xl text-start pl-2 md:pl-24 py-4 absolute md:-top-24 right-0">
+            <p className="text-white font-poppins text-2xl font-normal mb-6 w-full">
+              Preencha os dados para usar o nosso website
+            </p>
+            {/* Adicione aqui os campos e inputs */}
+            <form className="space-y-5 items-start mx-auto justify-center text-center flex flex-col">
+              <div className="relative flex items-start flex-col">
+                <p className="font-poppins font-light text-white text-md mb-3 ml-2">
+                  Nome completo
+                </p>
+                <input
+                  type="text"
+                  placeholder="Nome completo"
+                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
+                />
+              </div>
+
+              <div className="relative flex items-start flex-col">
+                <p className="font-poppins font-light text-white text-md mb-3 ml-2">
+                  Endereço de E-mail
+                </p>
+                <input
+                  type="email"
+                  placeholder="Digite o seu E-mail"
+                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
+                />
+              </div>
+
+              <div className="relative flex items-start flex-col">
+                <p className="font-poppins font-light text-white text-md mb-3 ml-2">
+                  Senha da sua conta
+                </p>
+                <input
+                  type="password"
+                  placeholder="Uma senha forte"
+                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
+                />
+              </div>
+
+              <div className="relative flex items-start flex-col">
+                <p className="font-poppins font-light text-white text-md mb-3 ml-2">
+                  Telefone com DDD
+                </p>
+                <input
+                  type="tel"
+                  placeholder="Telefone para contato"
+                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
+                />
+              </div>
+
+              {/* Checkbox e Botão */}
+              <div className="relative flex flex-col items-start mt-6">
+                <label className="flex items-center text-sm font-poppins text-[#FDFBE9]">
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 border-2 border-[#4F4F4F] bg-transparent rounded-md focus:ring-0 transition duration-300 checked:bg-[#F2DD52] checked:border-[#F2DD52] checked:rounded-md"
+                  />
+                  <span className="ml-2 font-poppins font-normal text-sm">
+                    Ao me registrar, eu concordo com os{" "}
+                    <a href="/termos" className="text-[#F2DD52]">
+                      termos do website.
+                    </a>
+                  </span>
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                className="bg-[#F2DD52] flex items-center text-center justify-center mx-auto md:ml-20  text-black font-poppins  font-medium text-[15px] w-[297px] h-[52px] mt-6 rounded-full transition-opacity hover:opacity-90"
+              >
+                Registrar uma conta
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SignUpPage; -->

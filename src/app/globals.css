@@ -5,10 +5,41 @@
 @tailwind utilities;
 
 
-
 @import 'swiper/swiper-bundle.css';
 
 
+/* Adicione isso ao seu CSS global */
+.custom-checkbox {
+  width: 1rem; /* 16px */
+  height: 1rem; /* 16px */
+  border: 2px solid #4F4F4F !important;
+  background-color: transparent;
+  border-radius: 0.25rem; /* 4px */
+  transition: background-color 0.3s, border-color 0.3s;
+  appearance: none; /* Remove o estilo padrão */
+  position: relative; /* Necessário para o ícone de checado */
+}
+
+.custom-checkbox:checked {
+  background-color: #F2DD52 !important;
+  border-color: #F2DD52 !important;
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem; /* 16px */
+  height: 1rem; /* 16px */
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  font-weight: 900; /* Importante para ícones do FontAwesome */
+  color: #171717; /* Cor do ícone */
+  font-size: 0.75rem; /* Ajuste o tamanho do ícone conforme necessário */
+}
 
 .cart-sidebar {
   transition: transform 0.5s ease;

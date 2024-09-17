@@ -70,7 +70,7 @@ const Navbar = () => {
 
 
             <Link
-              href="/user"
+              href="/cadastro"
               className="flex items-center transition duration-300 hover:scale-105"
             >
               <span className="bg-[#F2DD52] rounded-full p-3 flex items-center justify-center">
