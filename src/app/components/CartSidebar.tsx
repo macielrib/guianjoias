@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import {  FaMinus, FaPlus, FaRegTrashAlt } from "react-icons/fa";
+import { FaMinus, FaPlus, FaRegTrashAlt } from "react-icons/fa";
 import { LiaTagsSolid } from "react-icons/lia";
 
 const CartSidebar = ({
@@ -21,8 +21,15 @@ const CartSidebar = ({
       quantity: 1,
       image: "/assets/joias/joia3.png",
     },
-    // Outros itens...
-  ]);
+    {
+      id: 2,
+      name: "Excepteur sint occaecat cupidatat non proident 18k 1,4mm",
+      size: "A",
+      price: 2500.0,
+      quantity: 1,
+      image: "/assets/joias/joia3.png",
+    },
+  ]); // Iniciar com um item para teste, altere conforme necessário.
 
   const [coupon, setCoupon] = useState("");
   const [couponApplied, setCouponApplied] = useState(false);
@@ -63,7 +70,10 @@ const CartSidebar = ({
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+    if (
+      sidebarRef.current &&
+      !sidebarRef.current.contains(event.target as Node)
+    ) {
       toggleCart();
     }
   };
@@ -84,13 +94,16 @@ const CartSidebar = ({
     <>
       {/* Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={toggleCart} />
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-40"
+          onClick={toggleCart}
+        />
       )}
 
       {/* Carrinho Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 right-0 w-[590px] h-[100vh] bg-[#0B0B0B] transition-transform duration-500 ${
+        className={`fixed top-0 right-0 w-full max-w-lg h-[100vh] bg-[#0B0B0B] transition-transform duration-500 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ zIndex: 50 }}
@@ -103,27 +116,37 @@ const CartSidebar = ({
           >
             &times;
           </button>
-          <h1 className="font-poppins text-3xl font-light text-white mb-2">
+          <h1 className="font-poppins text-2xl font-[400] text-white mb-2">
             Resumo do pedido
           </h1>
-          <p className="text-md font-normal font-poppins text-[#F2DD52] mb-8">
+          <p className="text-md font-[400] font-poppins text-[#F2DD52] mb-8">
             Produtos adicionados ao carrinho
           </p>
 
+          {/* Mensagem quando não houver itens no carrinho */}
+          {cartItems.length === 0 && (
+            <div className="flex flex-1 justify-center items-center">
+              <p className="text-[#F2DD52] text-lg font-poppins text-center">
+                Não há itens no seu carrinho.
+              </p>
+            </div>
+          )}
+
           {/* Lista de Produtos */}
-          <div className="flex-1">
+          <div className={`flex-1 ${cartItems.length <= 2 ? "flex-grow-0" : ""}`}>
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="w-full h-[200px] border border-[#212020] rounded-xl mb-6 p-4 flex gap-4 items-start"
+                className="w-full  h-[200px] border border-[#212020] rounded-xl mb-6 p-4 flex gap-4 items-start"
               >
                 <Image
                   src={item.image}
                   alt={item.name}
                   width={160}
                   height={160}
-                  className="rounded-lg"
+                  className="rounded-lg w-[90px] h-[90px] md:w-[160px] md:h-[160px]"
                 />
+
                 <div className="flex-1">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="font-poppins text-lg font-normal text-white leading-tight">
@@ -137,11 +160,11 @@ const CartSidebar = ({
                       <FaRegTrashAlt />
                     </button>
                   </div>
-                  <p className="text-md text-[#F2DD52] font-poppins font-normal mt-2 mb-2">
+                  <p className="text-sm md:text-md text-[#F2DD52] font-poppins font-normal mt-2 mb-2">
                     Tamanho selecionado: {item.size}
                   </p>
-                  <div className="flex items-center justify-start gap-4 md:gap-8">
-                    <p className="text-md text-[#F2DD52] font-poppins font-normal">
+                  <div className="flex items-center justify-start gap-4 md:gap-4">
+                    <p className="text-sm text-[#F2DD52] font-poppins font-normal">
                       R$ {item.price.toFixed(2)}
                     </p>
                     <div className="flex items-center">
@@ -151,7 +174,7 @@ const CartSidebar = ({
                       >
                         <FaMinus className="text-lg" />
                       </button>
-                      <span className="border border-[#171717] text-white rounded-full mx-3 w-[32px] h-[32px] flex items-center justify-center text-md">
+                      <span className="border border-[#171717] text-white rounded-full mx-3 w-[32px] h-[32px] flex items-center justify-center text-sm md:text-md">
                         {item.quantity}
                       </span>
                       <button
@@ -167,7 +190,8 @@ const CartSidebar = ({
             ))}
           </div>
 
-          <div className="flex flex-col mt-6">
+          {/* Cupom de desconto */}
+          <div className={`flex flex-col mt-6 ${cartItems.length <= 2 ? "mt-auto" : ""}`}>
             <p className="font-poppins font-normal text-md text-white mb-2">
               Aplicar cupom de desconto
             </p>
@@ -179,12 +203,14 @@ const CartSidebar = ({
                 onChange={handleCouponChange}
                 className="border-2 !border-[#212020] bg-transparent rounded-lg py-2 px-3 pl-10 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-sm w-full max-w-xs h-[42px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
                 maxLength={9}
-                style={{ caretColor: '#F2DD52' }} // Ajusta a cor do cursor do input para o mesmo tom do botão
+                style={{ caretColor: "#F2DD52" }} // Ajusta a cor do cursor do input para o mesmo tom do botão
               />
               <LiaTagsSolid className="absolute left-3 text-[#DCC373] text-xl w-6 h-6" />
               <button
                 onClick={applyCoupon}
-                className={`bg-[#F2DD52] text-black font-poppins font-medium text-sm rounded-lg py-2 px-4 ml-2 ${couponApplied ? "opacity-50 cursor-not-allowed" : ""}`}
+                className={`bg-[#F2DD52] text-black font-poppins font-medium text-sm rounded-lg py-2 px-4 ml-2 ${
+                  couponApplied ? "opacity-50 cursor-not-allowed" : ""
+                }`}
                 disabled={couponApplied}
               >
                 Aplicar
@@ -197,6 +223,7 @@ const CartSidebar = ({
             )}
           </div>
 
+          {/* Total e Subtotal */}
           <div className="flex flex-col mt-6">
             <div className="flex justify-between w-full max-w-sm mb-2">
               <p className="font-poppins font-light text-white text-md">
@@ -224,38 +251,21 @@ const CartSidebar = ({
               </p>
             </div>
           </div>
+
+          {/* Botão de pagamento */}
           <button
             onClick={() => setButtonHovered(true)}
             onMouseLeave={() => setButtonHovered(false)}
-            className={`bg-[#F2DD52] text-black font-poppins font-medium w-full max-w-xs mx-auto text-[15px] py-3 px-2 mt-4 rounded-lg transition-transform duration-300 ${buttonHovered ? "scale-105" : ""}`}
+            className={`bg-[#F2DD52] text-black font-poppins font-medium w-full max-w-xs mx-auto text-[15px] py-3 px-2 mt-4 rounded-lg transition-transform duration-300 ${
+              buttonHovered ? "scale-105" : ""
+            }`}
           >
             Escolha como pagar
           </button>
         </div>
       </div>
-
-      {/* Estilos CSS para a barra de rolagem */}
-      <style jsx global>{`
-        .scrollbar-hidden {
-          overflow: auto; /* Habilita a rolagem */
-          scrollbar-width: 2px; /* Largura da barra de rolagem no Firefox */
-          scrollbar-color: #F2DD52 #212020; /* Cor da barra de rolagem e fundo no Firefox */
-        }
-        .scrollbar-hidden::-webkit-scrollbar {
-          width: 10px; /* Largura da barra de rolagem no Chrome/Safari */
-        }
-        .scrollbar-hidden::-webkit-scrollbar-track {
-          background: #212020; /* Cor de fundo da área de rolagem */
-        }
-        .scrollbar-hidden::-webkit-scrollbar-thumb {
-          background: #F2DD52; /* Cor da barra de rolagem */
-          border-radius: 10px; /* Arredondar os cantos da barra de rolagem */
-          margin: 4px; /* Espaçamento entre a barra de rolagem e a área de rolagem */
-        }
-      `}</style>
     </>
   );
 };
 
 export default CartSidebar;
-
