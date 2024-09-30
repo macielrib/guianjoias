@@ -11,8 +11,8 @@ interface Product {
   status: string;
   purchaseDate: string;
   id: string;
-  imageUrl: string; // Adicionar URL da imagem do produto
-  createdAt: string; // Data de criação
+  imageUrl: string;
+  createdAt: string; 
 }
 
 interface Category {

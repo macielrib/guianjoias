@@ -7,10 +7,8 @@ import dynamic from "next/dynamic";
 import { SetStateAction, useState } from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 
-// Carregando o Quill dinamicamente para evitar problemas de renderização no lado do servidor
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-import "react-quill/dist/quill.snow.css"; // Importando os estilos do Quill
-import Link from "next/link";
+import "react-quill/dist/quill.snow.css";
 
 const CriarProduto = () => {
   const [editorHtml, setEditorHtml] = useState("");
@@ -41,7 +39,6 @@ const CriarProduto = () => {
 
   return (
     <div className="flex flex-col -mt-2 px-4 lg:px-56 w-full">
-      {/* Seção "Você está gerenciando o seu website" */}
       <div className="w-full max-w-5xl bg-transparent py-2 px-6 rounded-lg mt-4 flex items-center gap-3 justify-start">
         <BsPatchCheckFill className="text-[#F2DD52] text-4xl sm:text-xl" />
         <p className="font-poppins text-md text-[#F2DD52] font-medium">
@@ -49,9 +46,7 @@ const CriarProduto = () => {
         </p>
       </div>
 
-      {/* Seção de formulário e imagens com espaçamento adicional */}
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-2 pt-12 lg:pr-28 w-full lg:ml-0 items-start">
-        {/* Conteúdo da esquerda - Formulário */}
         <div className="w-full max-w-5xl px-4 lg:px-8 text-start">
           <h1 className="font-poppins text-2xl mb-6 text-white font-medium transition duration-300 w-full md:whitespace-nowrap">
             Criar produto na categoria{" "}
@@ -80,7 +75,6 @@ const CriarProduto = () => {
             />
           </div>
 
-          {/* Campo de descrição do produto */}
           <div className="relative mt-2 flex flex-col mb-8">
             <p className="font-poppins text-[#FDFBE9] font-normal text-md ml-4">
               Descrição do produto
@@ -202,9 +196,7 @@ const CriarProduto = () => {
          <button  className="mt-6 mb-6 py-4 px-14 bg-[#F2DD52] font-poppins text-sm text-black font-medium rounded-full transition duration-300 hover:scale-105">Criar produto na categoria</button>
         </div>
 
-        {/* Conteúdo da direita - Imagens */}
         <div className="sticky top-20 py-24 md:py-12 lg:py-4 flex flex-col items-center text-center xl:ml-auto lg:ml-16">
-          {/* Imagem principal maior */}
           <Image
             src={"/logo.png"}
             alt="Imagem Produto"
@@ -237,7 +229,6 @@ const CriarProduto = () => {
         </div>
       </div>
 
-      {/* Estilo CSS personalizado para o placeholder */}
       <style jsx>{`
         .ql-container.ql-snow .ql-editor.ql-blank::before {
           color: #4f4f4f; /* Cor do placeholder */

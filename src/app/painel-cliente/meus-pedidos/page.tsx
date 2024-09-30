@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { PiUserCircleFill } from "react-icons/pi";
-import { FaHome, FaRegClone } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { TbChecklist } from "react-icons/tb";
 import { RiEditCircleFill } from "react-icons/ri";
 import Link from "next/link";

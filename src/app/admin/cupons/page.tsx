@@ -71,7 +71,6 @@ const CuponsPromocionais = () => {
     <>
       <div className="flex flex-col -mt-8 px-4 lg:px-56 w-full">
         <div className="bg-[#F2DD52] rounded-md w-full max-w-6xl md:w-[74rem] h-4 md:ml-6 mt-4"></div>
-        {/* Badge: Você está gerenciando... */}
         <div className="w-full max-w-5xl bg-transparent py-2 px-6 rounded-lg mt-4 flex items-center gap-3 justify-start">
           <BsPatchCheckFill className="text-[#F2DD52] text-4xl sm:text-xl" />
           <p className="font-poppins text-md text-[#F2DD52] font-medium">
@@ -79,7 +78,6 @@ const CuponsPromocionais = () => {
           </p>
         </div>
 
-        {/* Texto: Olá, administrador */}
         <div className="w-full max-w-5xl px-4 mt-4 lg:px-8 text-start">
           <h1 className="font-poppins text-3xl mb-2 text-white font-medium transition duration-300">
             Gerenciar seus,{" "}
@@ -95,7 +93,6 @@ const CuponsPromocionais = () => {
       </p>
 
       <div className="flex flex-col md:flex-row md:ml-52 gap-2 px-6 items-center md:items-start justify-center">
-        {/* Card de Criar Cupom */}
         <div className="flex flex-col w-full max-w-[340px] h-full max-h-[545px] rounded-lg bg-[#171717]">
           <div className="flex flex-col py-6 px-6 items-start justify-start">
             <h1 className="font-poppins text-white font-normal text-xl mb-4">
@@ -135,7 +132,6 @@ const CuponsPromocionais = () => {
           </div>
         </div>
 
-        {/* Seção de Cupons Ativos */}
         <div className="w-full max-w-4xl mx-auto mt-4">
           <h1 className="font-poppins text-white font-normal text-xl">
             Cupons ativos
@@ -148,7 +144,6 @@ const CuponsPromocionais = () => {
             <div>Ações</div>
           </div>
 
-          {/* Linhas da tabela com rolagem */}
           <div className="overflow-y-auto max-h-[400px] !scrollbar-thin !scrollbar-thumb-[#F2DD52] scrollbar-track-[#212020] scrollbar-rounded-md pr-4">
             {cuponsLista.length > 0 ? (
               cuponsLista.map((cupom) => (
@@ -156,24 +151,20 @@ const CuponsPromocionais = () => {
                   key={cupom.id}
                   className="grid grid-cols-1 lg:grid-cols-4 gap-4 py-2 px-4 text-center items-center bg-[#171717] text-white text-sm font-poppins border border-[#4F4F4F] mb-4 w-full rounded-xl"
                 >
-                  {/* Nome do cupom */}
                   <div className="flex justify-center items-center sm:col-span-1">
                     {cupom.name}
                   </div>
 
-                  {/* Status do cupom */}
                   <div className="relative items-center text-center sm:col-span-1">
                     <span className="truncate text-[#FBF7C6] font-poppins font-normal block">
                       {cupom.activity}
                     </span>
                   </div>
 
-                  {/* Data de criação */}
                   <div className="text-center font-poppins font-normal text-[#FBF7C6] sm:col-span-1">
                     {cupom.descount}
                   </div>
 
-                  {/* Ações */}
                   <div className="flex justify-center gap-2 sm:col-span-1 md:ml-8">
                     <button
                       className="p-2 transition duration-300 hover:-translate-y-1"

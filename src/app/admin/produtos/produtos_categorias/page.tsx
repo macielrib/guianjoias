@@ -6,14 +6,14 @@ import { BsPatchCheckFill } from "react-icons/bs";
 import { FaInfoCircle } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
 import { FaImage } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Tooltip from "@/app/components/Tooltip";
 
 interface Product {
   name: string;
   status: string;
-  purchaseDate: string; // Adicionando a propriedade imageUrl
-  imageUrl: string; // Adicionando a propriedade imageUrl
+  purchaseDate: string; 
+  imageUrl: string; 
   id: string;
 }
 
@@ -37,7 +37,7 @@ const ProductsAndCategories = ({ products, categories }: Props) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLElement; // Casting para HTMLElement
+    const target = e.target as HTMLElement;
     const scrollTop = target.scrollTop;
   
     if (scrollTop > 0) {

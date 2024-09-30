@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";

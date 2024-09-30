@@ -7,7 +7,7 @@ const Endereco = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = (event: { preventDefault: () => void }) => {
-    event.preventDefault(); // Evita a atualização da página
+    event.preventDefault(); 
     setIsDropdownOpen(!isDropdownOpen);
   };
 

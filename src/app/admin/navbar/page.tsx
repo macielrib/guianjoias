@@ -24,7 +24,6 @@ const AdminNavbar = () => {
         {/* Links de navegação */}
         <div className="flex items-center gap-6">
           {navItems.map((item, index) => {
-            // Verifica se a rota atual corresponde à rota do item ou se é "/admin/criar-produto"
             const isActive =
               pathname === item.path ||
               (item.path === "/admin/produtos" &&

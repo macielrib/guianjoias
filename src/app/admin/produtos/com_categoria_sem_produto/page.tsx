@@ -47,7 +47,7 @@ const CategoriesWithoutProducts = ({ categories }: Props) => {
                 type="text"
                 placeholder="Nome da categoria"
                 className="border !border-[#4F4F4F] bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-[270px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
-                maxLength={9} // Limita a entrada a 9 caracteres
+                maxLength={9} 
               />
             </div>
             <div className="flex items-center mb-4 py-4 px-2 text-white">
