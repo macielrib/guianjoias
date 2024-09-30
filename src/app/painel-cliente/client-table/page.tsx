@@ -1,8 +1,9 @@
+"use client"
+
 import { FaInfoCircle } from "react-icons/fa";
 import { useState } from "react";
 import Tooltip from "@/app/components/Tooltip";
 
-// Defina a interface para o pedido
 interface Order {
   name: string;
   status: string;
