@@ -40,6 +40,82 @@
   color: #171717; /* Cor do ícone */
   font-size: 0.75rem; /* Ajuste o tamanho do ícone conforme necessário */
 }
+.scrollbar-hidden {
+  overflow-y: auto;
+}
+
+/* Personalizar barra de rolagem */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb {
+  scrollbar-color: #F2DD52 #212020;
+}
+
+.scrollbar-rounded-md::-webkit-scrollbar {
+  width: 8px;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos para o React Quill */
+.ql-container {
+  border: 2px solid #4F4F4F !important; /* Borda do editor */
+  border-radius: 1rem !important; /* Rounded-md */
+  background-color: transparent !important; /* Fundo transparente */
+  font-family: 'Poppins', sans-serif !important; /* Fonte Poppins */
+}
+
+.ql-editor {
+  padding: 1rem !important; /* Espaçamento interno */
+
+  color: #4F4F4F !important; /* Cor do texto */
+  background-color: transparent !important; /* Fundo transparente */
+}
+
+.ql-toolbar {
+  border: none !important; /* Remover borda do toolbar */
+  background-color: transparent !important; /* Fundo transparente */
+}
+
+.ql-toolbar button {
+  color: #4F4F4F !important; /* Cor dos ícones do toolbar */
+}
+
+.ql-toolbar button:hover {
+  color: #F2DD52 !important; /* Cor do ícone ao passar o mouse */
+}
+
+.ql-placeholder {
+  color: #4F4F4F !important; /* Cor do placeholder */
+}
+
+/* Ajustes para os botões de formatação */
+.ql-toolbar .ql-bold.ql-active,
+.ql-toolbar .ql-italic.ql-active {
+  color: #F2DD52 !important; /* Cor dos botões ativos */
+}
+
+.scrollbar-rounded-md::-webkit-scrollbar-track {
+  background-color: #212020;
+  border-radius: 10px;
+}
+
+.scrollbar-rounded-md::-webkit-scrollbar-thumb {
+  background-color: #F2DD52;
+  border-radius: 10px;
+  border: 2px solid transparent; /* Espaçamento entre a barra de rolagem e a trilha */
+  background-clip: padding-box; /* Permite o espaçamento ao redor da barra */
+}
+
+/* Estilo para esconder a barra de rolagem */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Para Chrome, Safari e Opera */
+}
 
 .cart-sidebar {
   transition: transform 0.5s ease;

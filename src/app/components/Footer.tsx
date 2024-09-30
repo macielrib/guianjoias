@@ -23,7 +23,7 @@ const Footer = () => {
             <h3 className="text-[#F2DD52] text-lg font-poppins mb-4">Institucional</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/termos-de-servico" legacyBehavior>
+                <Link href="/nossos-termos" legacyBehavior>
                   <a className="text-white text-sm font-poppins font-normal hover:text-[#F2DD52] transition duration-300 hover:scale-105">termos de serviço</a>
                 </Link>
               </li>
@@ -49,12 +49,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/criar-conta" legacyBehavior>
+                <Link href="/cadastro" legacyBehavior>
                   <a className="text-white text-sm font-poppins font-normal hover:text-[#F2DD52] transition duration-300 hover:scale-105">criar conta</a>
                 </Link>
               </li>
               <li>
-                <Link href="/fazer-login" legacyBehavior>
+                <Link href="/entrar" legacyBehavior>
                   <a className="text-white text-sm font-poppins font-normal hover:text-[#F2DD52] transition duration-300 hover:scale-105">fazer login</a>
                 </Link>
               </li>

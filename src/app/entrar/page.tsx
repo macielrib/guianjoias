@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cadastro = () => {
+const Entrar = () => {
   return (
     <>
       {/* Background Radial */}
@@ -21,12 +21,12 @@ const Cadastro = () => {
           <div className="w-full lg:w-1/2 text-center lg:text-start lg:items-start flex flex-col items-center justify-center mb-6 lg:mb-0">
             {/* Título */}
             <h1 className="text-[#FBF7C6] font-poppins text-3xl max-w-md lg:text-5xl lg:max-w-lg font-normal mb-4 lg:mb-6">
-              Crie a sua conta para acessar o site!
+              Faça login na sua conta do site.
             </h1>
 
             {/* Descrição */}
             <p className="text-[#606060] font-poppins text-lg lg:text-xl lg:max-w-md font-normal mb-8 lg:mb-16">
-              Diga-nos como podemos nos referir a<br/> você, durante autilização deste website.
+            Já possui uma conta registrada? entre na<br/> sua conta para utilizar o nosso site!
             </p>
 
             {/* Stepper */}
@@ -37,7 +37,7 @@ const Cadastro = () => {
                   01
                 </div>
                 <p className="text-[#ECC923] mt-2 font-poppins font-medium text-md">
-                  Dados pessoais
+                  Login na conta
                 </p>
               </div>
 
@@ -45,12 +45,13 @@ const Cadastro = () => {
               <div className="flex-1 -mt-6 h-2 lg:h-3 bg-white z-0 -mx-16 rounded"></div>
 
               {/* Número 2 */}
-              <div className="flex flex-col items-center">
-                <div className="flex items-center justify-center w-12 h-12 z-20 lg:w-16 lg:h-16 bg-[#4F4F4F] text-[#171717] rounded-full font-poppins text-xl lg:text-2xl font-bold">
+               {/* Número 1 */}
+               <div className="flex flex-col items-center">
+                <div className="flex items-center justify-center z-20 w-12 h-12 lg:w-16 lg:h-16 bg-[#ECC923] text-[#3E210A] rounded-full font-poppins text-xl lg:text-2xl font-bold">
                   02
                 </div>
-                <p className="text-[#DCC373] mt-2 font-poppins text-md font-normal">
-                  Dados de entrega
+                <p className="text-[#ECC923] mt-2 font-poppins font-medium text-md">
+                  Usar website
                 </p>
               </div>
             </div>
@@ -65,28 +66,28 @@ const Cadastro = () => {
           {/* Área Direita para Inputs e Campos */}
           <div className="w-full lg:w-8/12 text-center lg:text-start pl-2 lg:pl-40 py-4">
           <p className="text-white font-poppins text-2xl font-normal mb-6 w-full">
-              Preencha os dados para usar o nosso website
+              Fazer login na conta
             </p>
             {/* Formulário */}
             <form className="space-y-5 items-center lg:items-start mx-auto justify-center text-center flex flex-col">
               <div className="relative flex items-center lg:items-start flex-col">
                 <p className="font-poppins font-light text-white text-md mb-3 ml-2">
-                  Nome completo
+                  Endereço de E-mail
                 </p>
                 <input
                   type="text"
-                  placeholder="Nome completo"
+                  placeholder="Digite o seu E-mail"
                   className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
                 />
               </div>
 
               <div className="relative flex items-center lg:items-start flex-col">
                 <p className="font-poppins font-light text-white text-md mb-3 ml-2">
-                  Endereço de E-mail
+                  Senha da sua conta
                 </p>
                 <input
                   type="email"
-                  placeholder="Digite o seu E-mail"
+                  placeholder="Uma senha forte"
                   className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
                 />
               </div>
@@ -102,47 +103,20 @@ const Cadastro = () => {
                 />
               </div>
 
-              <div className="relative flex items-center lg:items-start flex-col">
-                <p className="font-poppins font-light text-white text-md mb-3 ml-2">
-                  Telefone com DDD
-                </p>
-                <input
-                  type="tel"
-                  placeholder="Telefone para contato"
-                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
-                />
-              </div>
-
-              {/* Checkbox e Botão */}
-              <div className="relative flex flex-col items-start mt-6">
-                <label className="flex items-center text-sm font-poppins text-[#FDFBE9]">
-                <input
-  type="checkbox"
-  className="custom-checkbox"
-/>
-
-                  <span className="ml-2 font-poppins font-light text-sm">
-                    Ao me registrar, eu concordo com os{" "}
-                    <a href="/termos" className="text-[#F2DD52]">
-                      termos do website.
-                    </a>
-                  </span>
-                </label>
-              </div>
+       
 
               <button
                 type="submit"
                 className="bg-[#F2DD52] flex items-center text-center justify-center lg:mx-auto lg:ml-20  text-black font-poppins  font-medium text-[15px] w-[297px] h-[52px] mt-6 rounded-full transition-opacity hover:opacity-90"
               >
-                Registrar uma conta
+                Fazer login agora
               </button>
             </form>
 
-            
             <p className="mr-24 mt-4 text-[#6F6F6F] flex items-center gap-2 justify-center font-poppins font-light text-sm">
-                    Já criou uma conta?
+                    Ainda não tem conta?
                     <a href="/entrar" className="text-[#F2DD52] ">
-                      Entrar na Conta
+                      Criar uma Conta
                     </a>
                   </p>
           </div>
@@ -152,4 +126,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default Entrar;

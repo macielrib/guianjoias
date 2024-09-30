@@ -76,7 +76,7 @@ const CardProduct: React.FC<{ product: (typeof products)[0] }> = ({
       <p className="text-md text-[#F2DD52] font-poppins text-left">
         {product.newPrice}
       </p>
-      <p className="text-xs text-[#4F4F4F] font-poppins mt-2 text-left">
+      <p className="text-xs text-[#161111] font-poppins mt-2 text-left">
         {product.installment}
       </p>
     </div>
