@@ -53,7 +53,7 @@ const AdminPage = () => {
   }
 
   if (products.length > 0 && categories.length > 0) {
-    return <ProductsAndCategories products={products} categories={categories} />;
+    return <ProductsAndCategories />;
   }
 
   return null;
