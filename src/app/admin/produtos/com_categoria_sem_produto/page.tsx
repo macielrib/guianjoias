@@ -11,10 +11,8 @@ interface Category {
 }
 
 const CategoriesWithoutProducts = () => {
-  // Simulando categorias dentro do próprio componente
   const [categories, setCategories] = useState<Category[]>([]);
 
-  // Use o useEffect para simular o carregamento de categorias
   useEffect(() => {
     const fetchedCategories: Category[] = [
       { name: "Categoria 1" },
@@ -23,6 +21,7 @@ const CategoriesWithoutProducts = () => {
     ];
     setCategories(fetchedCategories);
   }, []);
+
 
   return (
     <>
