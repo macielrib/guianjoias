@@ -32,15 +32,9 @@ interface ProductsAndCategoriesProps {
 }
 
 const ProductsAndCategories = ({ products, categories }: ProductsAndCategoriesProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLElement;
-    const scrollTop = target.scrollTop;
 
-    setIsScrolled(scrollTop > 0);
-  };
 
   const handleInfoClick = (order: Order) => {
     setSelectedOrder(order);
