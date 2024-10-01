@@ -13,7 +13,7 @@ const Endereco = () => {
 
   const [cep, setCep] = useState('');
 
-  const handleChange = (e: { target: { value: any; }; }) => {
+  const handleChange = (e: { target: { value: string; }; }) => {
     const input = e.target.value;
     // Remove caracteres não numéricos
     const numbers = input.replace(/\D/g, '');

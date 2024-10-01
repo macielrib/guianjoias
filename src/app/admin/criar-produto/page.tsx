@@ -12,7 +12,6 @@ import "react-quill/dist/quill.snow.css";
 
 const CriarProduto = () => {
   const [editorHtml, setEditorHtml] = useState("");
-  const [values, setValues] = useState([220, 2500]);
 
   const [checkedCategories, setCheckedCategories] = useState<string[]>([]);
 
@@ -30,9 +29,7 @@ const CriarProduto = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleReset = () => {
-    setValues([220, 2500]);
-  };
+
   const handleEditorChange = (html: SetStateAction<string>) => {
     setEditorHtml(html);
   };

@@ -110,7 +110,7 @@ const CategoriesWithoutProducts = ({ categories }: Props) => {
           <div className="flex flex-col items-start md:flex-row justify-between py-2 ">
             <h1 className="font-poppins text-white font-normal text-xl mb-4">
               Produtos na categoria{" "}
-              <span className="text-[#F2DD52]">"Nome da Categoria"</span>
+              <span className="text-[#F2DD52]">&quot;Nome da Categoria&quot;</span>
             </h1>
             <Link
               href={"criar-produto"}

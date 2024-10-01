@@ -20,7 +20,7 @@ interface Category {
 }
 
 const AdminPage = () => {
-  const [categories, setCategories] = useState<Category[]>([
+  const [categories] = useState<Category[]>([
     {
       name: "Categoria 1",
     },
@@ -32,7 +32,7 @@ const AdminPage = () => {
     },
   ]);
   // Arrays simulados de produtos e categorias
-  const [products, setProducts] = useState<Product[]>([
+  const [products] = useState<Product[]>([
     {
       name: "Excepteur sint occaecat cupidatat non proident",
       status: "Aguardando envio",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import { FaMinus, FaPlus, FaRegTrashAlt } from "react-icons/fa";
 import { LiaTagsSolid } from "react-icons/lia";
@@ -69,14 +69,17 @@ const CartSidebar = ({
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      sidebarRef.current &&
-      !sidebarRef.current.contains(event.target as Node)
-    ) {
-      toggleCart();
-    }
-  };
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node)
+      ) {
+        toggleCart();
+      }
+    },
+    [toggleCart]
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -88,8 +91,7 @@ const CartSidebar = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen]);
-
+  }, [isOpen, handleClickOutside]); 
   return (
     <>
       {/* Overlay */}

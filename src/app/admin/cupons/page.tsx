@@ -200,7 +200,7 @@ const CuponsPromocionais = () => {
             </h2>
             <p className="font-poppins text-[#FFFFFF80] text-sm font-normal text-center mx-auto mb-8">
               Tem certeza que deseja remover o cupom de desconto{" "}
-              <span className="text-[#F2DD52]">"{selectedCupom?.name}"?</span> Esta ação é irreversível.
+              <span className="text-[#F2DD52]">&quot;{selectedCupom?.name}&quot;?</span> Esta ação é irreversível.
             </p>
             <div className="flex justify-center mt-4">
               <button
@@ -223,7 +223,7 @@ const CuponsPromocionais = () => {
       exit={{ opacity: 0, y: -20 }}
     >
       <p className="font-poppins text-sm font-normal text-white">
-        O cupom <span className="text-[#F2DD52]">"{toast.message}"</span> foi removido com sucesso.
+        O cupom <span className="text-[#F2DD52]">&quot;{toast.message}&quot;</span> foi removido com sucesso.
       </p>
     </motion.div>
   )}
