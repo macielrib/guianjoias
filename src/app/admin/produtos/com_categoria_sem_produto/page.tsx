@@ -146,5 +146,19 @@ const CategoriesWithoutProducts = ({ categories }: Props) => {
   );
 };
 
-// Exporta o componente corrigido
+// Função para gerar dados de categorias estaticamente
+export async function getStaticProps() {
+  const categories: Category[] = [
+    { name: "Categoria 1" },
+    { name: "Categoria 2" },
+    { name: "Categoria 3" },
+  ];
+
+  return {
+    props: {
+      categories,
+    },
+  };
+}
+
 export default CategoriesWithoutProducts;
