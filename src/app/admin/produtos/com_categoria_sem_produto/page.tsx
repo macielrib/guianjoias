@@ -2,16 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
+import { useEffect, useState } from "react";
 
 interface Category {
   name: string;
 }
 
-interface Props {
-  categories: Category[];
-}
+const CategoriesWithoutProducts = () => {
+  // Simulando categorias dentro do próprio componente
+  const [categories, setCategories] = useState<Category[]>([]);
 
-const CategoriesWithoutProducts = ({ categories }: Props) => {
+  // Use o useEffect para simular o carregamento de categorias
+  useEffect(() => {
+    const fetchedCategories: Category[] = [
+      { name: "Categoria 1" },
+      { name: "Categoria 2" },
+      { name: "Categoria 3" },
+    ];
+    setCategories(fetchedCategories);
+  }, []);
+
   return (
     <>
       <div className="flex flex-col -mt-8 px-4 lg:px-56 w-full">
@@ -36,6 +46,7 @@ const CategoriesWithoutProducts = ({ categories }: Props) => {
           </p>
         </div>
       </div>
+
       <div className="flex flex-col md:flex-row md:ml-32 gap-8 px-6 items-center md:items-start justify-center">
         <div className="flex flex-col w-full max-w-[340px] h-full max-h-[545px] rounded-lg bg-[#171717]">
           <div className="flex flex-col py-6 px-6 items-start justify-start">
