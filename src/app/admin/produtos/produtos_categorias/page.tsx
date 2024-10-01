@@ -41,15 +41,13 @@ const ProductsAndCategories = ({ products, categories }: { products: Product[]; 
     }
   };
 
-  const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
+  const [, setSelectedOrder] = useState<Order | null>(null);
 
   const handleInfoClick = (order: Order) => {
     setSelectedOrder(order);
   };
 
-  const handleCloseModal = () => {
-    setSelectedOrder(null);
-  };
+
 
   return (
     <>
