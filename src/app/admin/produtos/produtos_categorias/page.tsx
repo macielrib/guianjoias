@@ -6,7 +6,6 @@ import { BsPatchCheckFill } from "react-icons/bs";
 import { FaInfoCircle } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
 import { useState } from "react";
-import Tooltip from "@/app/components/Tooltip";
 
 interface Product {
   name: string;
@@ -230,7 +229,6 @@ const TableHeader = () => (
 const TableRow = ({
   product,
   index,
-  isScrolled,
   onInfoClick,
 }: {
   product: Product;
