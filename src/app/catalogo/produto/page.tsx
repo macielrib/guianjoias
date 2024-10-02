@@ -125,7 +125,7 @@ const ProductPage = () => {
                 alt={`Produto imagem ${index + 1}`}
                 width={80}
                 height={80}
-                className="rounded-md cursor-pointer object-cover transition duration-300 hover:-translate-y-1"
+                className="rounded-md cursor-pointer object-cover "
                 onClick={() => handleImageClick(img)}
               />
             ))}
@@ -136,7 +136,7 @@ const ProductPage = () => {
               alt="Imagem principal do produto"
               width={500}
               height={500}
-              className="rounded-sm object-cover transition duration-300 hover:scale-105"
+              className="rounded-sm object-cover "
             />
           </div>
         </div>

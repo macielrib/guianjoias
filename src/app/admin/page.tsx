@@ -15,10 +15,10 @@ const AdminPanel = () => {
 
   return (
     <>
-      <div className="flex flex-col -mt-2 mb-8 px-4 lg:px-56">
+      <div className="flex flex-col items-center -mt-2 mb-8 px-4">
         {/* Badge: Você está gerenciando... */}
-        <div className="w-full max-w-5xl bg-transparent py-2 px-6 rounded-lg mt-4 flex items-center gap-3 justify-start">
-          <BsPatchCheckFill className="text-[#F2DD52] text-4xl sm:text-xl" />
+        <div className="w-full max-w-5xl bg-transparent py-2 px-6 rounded-lg mt-4 flex flex-col md:flex-row items-start md:items-center gap-3 justify-start">
+          <BsPatchCheckFill className="text-[#F2DD52] text-2xl sm:text-xl" />
           <p className="font-poppins text-md text-[#F2DD52] font-medium">
             Você está gerenciando o seu website como um administrador!
           </p>
@@ -30,16 +30,27 @@ const AdminPanel = () => {
             Olá, <span className="text-[#F2DD52]">@administrator!</span>
           </h1>
           <p className="font-poppins font-normal text-md text-[#4F4F4F] mb-8">
-            Você está no seu painel administrativo, fique à vontade para modificar o seu website!
+            Você está no seu painel administrativo, fique à vontade para
+            modificar o seu website!
           </p>
 
-          <p className="font-poppins font-normal text-sm text-white">
-            45 produtos já registrados. <span className="text-[#4F4F4F] text-2xl">•</span> 60 clientes encontrados.
-          </p>
+          <div className="flex flex-col items-center md:flex-row gap-2"></div>
+
+          <div className="flex flex-col md:flex-row mx-auto gap-1.5 md:gap-0 items-center">
+            <p className="font-poppins font-normal text-sm inline-flex items-center text-white">
+              45 produtos registrados.{" "}
+              <span className="text-[#4F4F4F] px-2 text-2xl hidden md:block">
+                •
+              </span>
+            </p>
+            <p className="font-poppins font-normal text-sm inline-flex items-center text-white">
+              60 clientes encontrados.
+            </p>
+          </div>
         </div>
 
         {/* Título: Resumo de vendas e Input de Pesquisa */}
-        <div className="w-full max-w-5xl px-4 mt-8 lg:px-8 flex items-center justify-start gap-2 text-start">
+        <div className="w-full max-w-5xl px-4 mt-8 lg:px-8 flex flex-col md:flex-row items-center justify-start gap-4 md:gap-2 text-start">
           {/* Título: Resumo de vendas */}
           <h2 className="font-poppins text-xl text-white font-normal mr-2">
             Resumo de vendas
@@ -54,10 +65,15 @@ const AdminPanel = () => {
               onChange={handleChange}
               className="w-full h-[39px] pl-10 pr-4 bg-transparent text-[#BEBEBE94] border !border-[#4F4F4F] rounded-full font-poppins text-sm placeholder-[#BEBEBE94] outline-none transition duration-300"
             />
-            <AiOutlineSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#BEBEBE94]" size={20} />
+            <AiOutlineSearch
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#BEBEBE94]"
+              size={20}
+            />
           </div>
         </div>
-        <AdminTable />
+        <div className="flex items-center mx-auto">
+          <AdminTable />
+        </div>
       </div>
     </>
   );

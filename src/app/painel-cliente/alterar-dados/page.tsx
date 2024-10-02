@@ -22,9 +22,9 @@ const PanelClient = () => {
   return (
     <div className="flex flex-col -mt-2 mb-8 px-4 lg:ml-64">
       {/* Badge: Você está gerenciando... */}
-      <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end w-full max-w-5xl">
+      <div className="flex flex-col gap-4 text-center  md:text-start lg:flex-row justify-between items-center lg:items-end w-full max-w-5xl">
         <div className="flex items-center gap-4 mb-2">
-          <PiUserCircleFill className="text-[#ECC923] h-10 w-10" />
+          <PiUserCircleFill className="text-[#ECC923] hidden md:block h-10 w-10" />
           <div className="flex flex-col">
             <h1 className="text-[#FBF7C6] font-poppins text-lg font-normal">
               Augusto
@@ -36,13 +36,13 @@ const PanelClient = () => {
           </div>
         </div>
         <div className="flex gap-2 items-center">
-          <PiUserCircleFill className="text-[#ECC923] h-6 w-6" />
+          <PiUserCircleFill className="text-[#ECC923] hidden md:block h-6 w-6" />
           <p className="text-md font-poppins font-normal text-white">
             Conta registrada em: 00/00/0000
           </p>
         </div>
       </div>
-      <div className="flex flex-col text-center mx-auto lg:mx-0 lg:text-start lg:flex-row mt-12 gap-8 mb-8">
+      <div className="flex flex-col text-center  lg:mx-0 lg:text-start lg:flex-row mt-12 gap-8 mb-8">
         <div className="flex flex-col mx-auto lg:mx-0 gap-4">
           <Link
             href="/painel-cliente"
@@ -92,7 +92,7 @@ const PanelClient = () => {
               <input
                 type="text"
                 placeholder="Lorem ipsum dolor sit amet elit"
-                className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-4 px-3 pl-8 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-full h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+                className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-4 px-3 pl-8 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-full max-w-[205px] md:max-w-full mx-auto md:mx-0 h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
                 maxLength={50}
               />
             </div>
@@ -116,11 +116,11 @@ const PanelClient = () => {
                 <input
                   type="text"
                   placeholder="00000000"
-                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-4 px-3 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-4 px-3 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-full max-w-[205px] md:max-w-full mx-auto md:mx-0 h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
                 />
               </div>
 
-              <div className="flex flex-col w-[253px] mx-auto lg:mx-0">
+              <div className="flex flex-col w-[205px] md:w-[253px] mx-auto lg:mx-0">
                 <label className="font-poppins text-[#FDFBE9] font-normal text-sm mb-2">
                   Escolha o estado
                 </label>
@@ -152,18 +152,18 @@ const PanelClient = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row justify-start px-6 w-full gap-4 mt-4 max-w-[802px]">
-              <div className="flex flex-col mx-auto lg:mx-0 w-[185px]">
+              <div className="flex flex-col mx-auto lg:mx-0 w-[205px] md:w-[185px]">
                 <label className="font-poppins text-[#FDFBE9] font-normal text-sm mb-2">
                   Número da casa
                 </label>
                 <input
                   type="text"
                   placeholder="500"
-                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-4 px-3 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-4 px-3 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal w-full max-w-[205px] md:max-w-full mx-auto md:mx-0 text-sm h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
                 />
               </div>
 
-              <div className="flex flex-col mx-auto lg:mx-0 w-[409px]">
+              <div className="flex flex-col mx-auto lg:mx-0 w-[205px] md:w-[409px]">
                 <label className="font-poppins text-[#FDFBE9] font-normal text-sm mb-2">
                   Complemento (Opcional)
                 </label>
@@ -192,18 +192,18 @@ const PanelClient = () => {
     
 
          <div className="flex flex-col justify-start px-6 w-full gap-4 mt-4 max-w-[802px]">
-           <div className="flex  mx-auto lg:mx-0 flex-col w-[458px]">
+           <div className="flex  mx-auto lg:mx-0 flex-col w-[205px] md:w-[458px]">
              <label className="font-poppins text-[#FDFBE9] font-normal text-sm mb-2">
                Nome completo
              </label>
              <input
                type="text"
                placeholder="Lorem ipsum dolor sit amet elit"
-               className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-4 px-3 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+               className="border-2 !border-[#4F4F4F] bg-transparent rounded-lg py-4 px-3 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm h-[48px]   focus:border-[#F2DD52] focus:outline-none transition duration-300"
              />
            </div>
 
-           <div className="flex mx-auto lg:mx-0 flex-col w-[234px]">
+           <div className="flex mx-auto lg:mx-0 flex-col w-[205px] md:w-[234px]">
              <label className="font-poppins text-[#FDFBE9] font-normal text-sm mb-2">
                Senha da sua conta
              </label>
@@ -218,7 +218,7 @@ const PanelClient = () => {
          </div>
 
          <div className="flex flex-col justify-start px-6 w-full gap-4 mt-4 max-w-[802px]">
-           <div className="flex flex-col  mx-auto lg:mx-0 w-[458px]">
+           <div className="flex flex-col  mx-auto lg:mx-0 w-[205px] md:w-[458px]">
              <label className="font-poppins text-[#FDFBE9] font-normal text-sm mb-2">
                Endereço de E-mail
              </label>
@@ -229,7 +229,7 @@ const PanelClient = () => {
              />
            </div>
 
-           <div className="flex flex-col mx-auto lg:mx-0 w-[234px]">
+           <div className="flex flex-col mx-auto lg:mx-0 w-[205px] md:w-[234px]">
              <label className="font-poppins text-[#FDFBE9] font-normal text-sm mb-2">
                Número de telefone
              </label>

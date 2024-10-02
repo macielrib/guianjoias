@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { Range, getTrackBackground } from "react-range";
@@ -196,32 +196,37 @@ const Catalogo = () => {
                 Categoria
               </h3>
               <div className="space-y-2">
-                {[ "Lançamentos", "Pulseiras", "Correntes de ouro", "Escapulários", "Brincos" ].map((category) => (
-                  <label
-                    key={category}
-                    className="flex items-center space-x-3 text-lg cursor-pointer"
-                  >
+                {[
+                  "Lançamentos",
+                  "Pulseiras",
+                  "Correntes de ouro",
+                  "Escapulários",
+                  "Brincos",
+                ].map((category) => (
+                  <div key={category} className="flex items-center space-x-3 text-lg">
                     <input
+                      id={category}
                       type="checkbox"
                       checked={checkedCategories.includes(category)}
                       onChange={() => handleCheckboxChange(category)}
                       className="hidden"
                     />
-                    <div
+                    <label
+                      htmlFor={category}
                       className={`w-5 h-5 border-2 rounded-sm ${
                         checkedCategories.includes(category)
                           ? "border-[#F2DD52] bg-[#F2DD52]"
                           : "border-[#4F4F4F]"
-                      } flex items-center justify-center`}
+                      } flex items-center justify-center cursor-pointer`}
                     >
                       {checkedCategories.includes(category) && (
                         <FaCheck className="text-xs text-black" />
                       )}
-                    </div>
+                    </label>
                     <span className="text-white font-poppins font-light text-md">
                       {category}
                     </span>
-                  </label>
+                  </div>
                 ))}
               </div>
             </div>
@@ -229,7 +234,7 @@ const Catalogo = () => {
         </div>
 
         {/* Catálogo de Produtos */}
-        <div className="w-full lg:w-3/4 ml-6">  
+        <div className="w-full lg:w-3/4 ml-6">
           <div className="flex flex-col lg:flex-row justify-between items-start mb-6">
             <h1 className="text-white text-2xl font-poppins font-light">
               Catálogo de produtos

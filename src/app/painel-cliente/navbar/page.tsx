@@ -22,7 +22,7 @@ const ClientNavbar = () => {
         </div>
 
         {/* Links de navegação */}
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap mx-auto lg:mx-0 text-center justify-center items-center gap-6">
           {navItems.map((item, index) => {
             // Verifica se a rota atual corresponde à rota do item
             const isActive = pathname === item.path;

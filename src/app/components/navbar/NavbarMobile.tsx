@@ -7,8 +7,16 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
+import CartSidebar from "../CartSidebar";
 
 const NavbarMobile = () => {
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+  
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -70,37 +78,37 @@ const NavbarMobile = () => {
               Início
             </Link>
             <Link
-              href="/catalog"
+              href="/catalogo"
               className="text-lg font-poppins text-[#F2DD52]"
             >
               Catálogo
             </Link>
             <Link
-              href="/launches"
+              href="/catalogo"
               className="text-lg font-poppins text-[#F2DD52]"
             >
               Lançamentos
             </Link>
             <Link
-              href="/bracelets"
+              href="/catalogo"
               className="text-lg font-poppins text-[#F2DD52]"
             >
               Pulseiras
             </Link>
             <Link
-              href="/chains"
+              href="/catalogo"
               className="text-lg font-poppins text-[#F2DD52]"
             >
               Correntes
             </Link>
             <Link
-              href="/escapularios"
+              href="/catalogo"
               className="text-lg font-poppins text-[#F2DD52]"
             >
               Escapulários
             </Link>
             <Link
-              href="/earrings"
+              href="/catalogo"
               className="text-lg font-poppins text-[#F2DD52]"
             >
               Brincos
@@ -108,13 +116,17 @@ const NavbarMobile = () => {
           </nav>
 
           <div className="mt-6 flex gap-4 items-center z-40">
-            <Link href="/cart" className="flex items-center">
+          <button
+              onClick={toggleCart}
+              className="flex items-center">
               <span className="bg-[#F2DD52] rounded-full p-4 flex items-center justify-center">
                 <IoBagHandleOutline className="text-black w-4 h-4" />
               </span>
-            </Link>
+            </button>
 
-            <Link href="/user" className="flex items-center">
+            <CartSidebar isOpen={isCartOpen} toggleCart={toggleCart} />
+
+            <Link href="/entrar" className="flex items-center">
               <span className="bg-[#F2DD52] rounded-full p-4 flex items-center justify-center">
                 <FaUser className="text-black w-4 h-4" />
               </span>

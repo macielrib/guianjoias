@@ -82,7 +82,7 @@ const Footer = () => {
       <div className="bg-black text-[#FDFBE9] py-4 md:mt-24 px-6">
         <div className="container mx-auto flex justify-around text-sm font-poppins">
           <p>&copy; 2024 Guian Joias. Todos os direitos reservados.</p>
-         <Link href={'www.cherrycode.com.br'} target='_blank' className='transition duration-300 hover:text-[#F2DD52]'> <p>Website developed by Cherry Code.</p></Link>
+         <a href='https://cherrycode.com.br/' target='_blank' className='transition duration-300 hover:text-[#F2DD52]'> <p>Website developed by Cherry Code.</p></a>
         </div>
       </div>
     </footer>

@@ -27,18 +27,18 @@ const ProductsAndCategories = () => {
   
   return (
     <>
-      <div className="flex flex-col -mt-8 px-4 lg:px-56 w-full">
-        <div className="bg-[#F2DD52] rounded-md w-full max-w-6xl md:w-[74rem] h-4 md:ml-6 mt-4"></div>
+      <div className="flex flex-col -mt-8 px-4 items-center w-full">
+        <div className="bg-[#F2DD52] hidden md:block rounded-md w-full max-w-6xl md:w-[70rem] h-4 md:ml-16 mt-4"></div>
         {/* Badge: Você está gerenciando... */}
-        <div className="w-full max-w-5xl bg-transparent py-2 px-6 rounded-lg mt-4 flex items-center gap-3 justify-start">
-          <BsPatchCheckFill className="text-[#F2DD52] text-4xl sm:text-xl" />
+        <div className="w-full max-w-5xl bg-transparent text-center md:text-start py-2 rounded-lg mt-4 flex flex-col md:flex-row items-center gap-3 justify-start">
+          <BsPatchCheckFill className="text-[#F2DD52] text-2xl sm:text-xl" />
           <p className="font-poppins text-md text-[#F2DD52] font-medium">
             Você está gerenciando o seu website como um administrador!
           </p>
         </div>
 
         {/* Texto: Olá, administrador */}
-        <div className="w-full max-w-5xl px-4 mt-4 lg:px-8 text-start">
+        <div className="w-full max-w-5xl mt-4 text-center md:text-start">
           <h1 className="font-poppins text-3xl mb-2 text-white font-medium transition duration-300">
             Gerenciar <span className="text-[#F2DD52]">produtos</span> e{" "}
             <span className="text-[#F2DD52]">categorias</span>
@@ -50,7 +50,7 @@ const ProductsAndCategories = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row md:ml-32 gap-8 px-6 items-center md:items-start justify-center">
+      <div className="flex flex-col md:flex-row md:ml-36 gap-8 py-2 px-4 items-center md:items-start justify-center">
         {/* Card de Criar Categoria */}
         <div className="flex flex-col w-full max-w-[340px] h-full max-h-[545px] rounded-lg bg-[#171717]">
           <div className="flex flex-col py-6 px-6 items-start justify-start">
@@ -61,7 +61,7 @@ const ProductsAndCategories = () => {
               <input
                 type="text"
                 placeholder="Nome da categoria"
-                className="border !border-[#4F4F4F] bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-[270px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+                className="border !border-[#4F4F4F] bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-[210px] md:w-[240px] lg:w-[270px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
                 maxLength={9} // Limita a entrada a 9 caracteres
               />
             </div>
@@ -116,7 +116,7 @@ const ProductsAndCategories = () => {
         {/* Seção de Produtos na Categoria */}
         <div className="flex flex-col w-full max-w-[800px]">
         <div className="flex flex-col w-full max-w-[800px]">
-          <div className="flex flex-col items-center  md:flex-row justify-between py-2">
+          <div className="flex flex-col items-center  md:flex-row justify-between py-2 px-2 mx-auto md:mx-0 text-center md:text-start">
             <h1 className="font-poppins text-white mx-auto font-normal text-xl mb-4">
               Produtos na categoria{" "}
               <span className="text-[#F2DD52]">&quot;Nome da Categoria&quot;</span>
@@ -130,7 +130,7 @@ const ProductsAndCategories = () => {
           </div>
 
           {/* Lista de Produtos - Tabela */}
-          <div className="w-full max-w-[1280px] mx-auto lg:-mt-3">
+          <div className="w-full max-w-[1280px] mx-auto lg:-mt-3 px-2">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 text-center p-4 text-[#DCC373] font-normal font-poppins text-md bg-transparent">
               <div className="mx-auto lg:pr-5">
                 <FaImage className="h-5 w-5" />

@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="bg-black py-2 transition-transform duration-500">
         <NavbarMobile />
         <div className="hidden transition-transform duration-500 md:-mt-8 md:flex container mx-auto flex flex-col items-center md:flex-row md:justify-center md:gap-32">
-          <div className="flex-1 mx-2 w-full max-w-xs transition duration-300 hover:-translate-y-1">
+          <div className="flex-1 mx-2 w-full max-w-xs ">
             <div className="max-w-sm space-y-3">
               <div className="relative">
                 <input

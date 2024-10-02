@@ -79,9 +79,9 @@ const MeusPedidos = () => {
   return (
     <div className="flex flex-col -mt-2 mb-8 px-4 lg:ml-64">
       {/* Badge: Você está gerenciando... */}
-      <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end w-full max-w-5xl">
+      <div className="flex flex-col gap-4 text-center  md:text-start lg:flex-row justify-between items-center lg:items-end w-full max-w-5xl">
         <div className="flex items-center gap-4 mb-2">
-          <PiUserCircleFill className="text-[#ECC923] h-10 w-10" />
+          <PiUserCircleFill className="text-[#ECC923] hidden md:block h-10 w-10" />
           <div className="flex flex-col">
             <h1 className="text-[#FBF7C6] font-poppins text-lg font-normal">
               Augusto
@@ -93,7 +93,7 @@ const MeusPedidos = () => {
           </div>
         </div>
         <div className="flex gap-2 items-center">
-          <PiUserCircleFill className="text-[#ECC923] h-6 w-6" />
+          <PiUserCircleFill className="text-[#ECC923] hidden md:block h-6 w-6" />
           <p className="text-md font-poppins font-normal text-white">
             Conta registrada em: 00/00/0000
           </p>
@@ -137,8 +137,8 @@ const MeusPedidos = () => {
         {/* Aqui para inserir o conteúdo da direita depois da navbar */}
         <div className="flex flex-col w-full max-w-4xl lg:ml-12">
           <div className="flex flex-col">
-            <div className="flex justify-between items-center">
-              <h1 className="font-poppins text-white font-normal text-2xl">
+            <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center">
+              <h1 className="font-poppins text-white font-normal text-xl md:text-2xl">
                 Resumo dos seus <span className="text-[#ECC923]">Pedidos!</span>
               </h1>
 
@@ -146,7 +146,7 @@ const MeusPedidos = () => {
                 🎉 Você já possui {pedidos.length} compras registradas!
               </h1>
             </div>
-            <div className="flex items-center py-4">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-0 items-center py-4">
               <p className="font-poppins text-md text-[#FBF7C6] font-normal">
                 Filtrar por
               </p>
@@ -198,7 +198,7 @@ const MeusPedidos = () => {
                   className="flex flex-col w-full max-w-4xl h-full bg-[#171717] rounded-xl p-6"
                 >
                   {/* Cabeçalho com número do pedido e status */}
-                  <div className="flex justify-between mb-6 py-2 px-10">
+                  <div className="flex flex-col md:flex-row  justify-between mb-6 py-2 px-10">
                     <p className="font-medium text-md font-poppins text-[#FBF7C6]">
                       Pedido #{pedido.numero}
                     </p>
@@ -247,47 +247,62 @@ const MeusPedidos = () => {
                               {produto.quantidade}
                             </span>
                           </p>
+                          <div className="block lg:hidden w-full mt-2 ml-1   bg-[#4F4F4F] text-[#4F4F4F] h-[1.5px] rounded-full"></div>
                         </div>
                       </div>
                     </div>
                   ))}
-                  <div className="w-full max-w-[791px] ml-10 bg-[#4F4F4F] text-[#4F4F4F] h-[1.5px] rounded-full"></div>
-                  <div className="flex flex-wrap gap-2 lg:flex-row justify-between items-center py-4 px-10">
+                  <div className="hidden lg:block w-full max-w-[791px] ml-10 bg-[#4F4F4F] text-[#4F4F4F] h-[1.5px] rounded-full"></div>
+                  <div className="flex flex-wrap  gap-2 lg:flex-row justify-between items-center py-4 px-10">
                     {/* <p className="font-poppins flex items-center gap-1.5 text-[#FBF7C6] text-md font-normal">
                       Código de rastreio:{" "}
                       <button className="text-[#F2DD52] inline-flex items-center gap-2">
                         AA123456785BR <FaRegClone />
                       </button>
                     </p> */}
-                    <p className="font-poppins flex items-center gap-2 text-[#FBF7C6] text-md font-normal">
+                    <p className="font-poppins flex flex-col md:flex-row items-center gap-2 text-[#FBF7C6] text-md font-normal">
                       Código de rastreio:{" "}
-                      <button className="text-[#F2DD52] inline-flex items-center gap-2">
-                      Aguarde a encomenda ser enviada.
+                      <button className="text-[#F2DD52] text-sm md:text-md inline-flex items-center gap-2">
+                        Aguarde a encomenda ser enviada.
                       </button>
                     </p>
                     {/* <button className="py-3 px-6 bg-[#F2DD52] text-black items-center font-medium text-center font-poppins text-sm rounded-full">
                       Eu recebi o produto
                     </button> */}
-                    <button className="py-3 px-6 bg-[#4F4F4F] text-black items-center font-medium text-center font-poppins text-sm rounded-full">
+                    <button className="py-3 px-4 md:px-6 mb-2 md:mb-0 bg-[#4F4F4F] text-black items-center font-medium text-center font-poppins text-sm rounded-full">
                       Eu recebi o produto
                     </button>
                   </div>
-                  <div className="w-full max-w-[791px] ml-10 mb-4 bg-[#4F4F4F] text-[#4F4F4F] h-[2px] rounded-full"></div>
-                  <div className="flex flex-wrap gap-2 lg:flex-row justify-between items-center px-10">
-                    <p className="font-poppins text-[#FBF7C6] text-md font-normal">
+                  <div className="hidden lg:block w-full max-w-[791px] ml-10 mb-4 bg-[#4F4F4F] text-[#4F4F4F] h-[2px] rounded-full"></div>
+                  <div className="flex flex-col gap-2 lg:flex-row justify-between items-center px-10">
+                    <p className="font-poppins text-[#FBF7C6] text-md font-normal mb-4 md:mb-0">
                       Método de pagamento:{" "}
                       <span className="text-[#F2DD52] ">Pix</span>
                     </p>
-                    <h1 className="text-[#FBF7C6] flex font-poppins text-sm items-center gap-2">
+
+                      <div className="flex flex-col items-center gap-2  md:flex-row">
                       <Image
                         src={"/logo.png"}
                         width={32}
                         height={32}
                         alt="Image Product"
                       ></Image>{" "}
+
+                      <h1  className="text-[#FBF7C6] flex flex-col font-poppins text-sm items-center gap-2">
                       Valor total da compra:{" "}
+                      </h1>
+                      <span className="text-[#F2DD52] font-poppins text-sm">R$ 3.500,00</span>
+                      </div>
+                    {/* <h1 className="text-[#FBF7C6] flex flex-col font-poppins text-sm items-center gap-2">
+                      <Image
+                        src={"/logo.png"}
+                        width={32}
+                        height={32}
+                        alt="Image Product"
+                      ></Image>{" "}
+                      <p>  Valor total da compra:{" "}</p>
                       <span className="text-[#F2DD52]">R$ 3.500,00</span>
-                    </h1>
+                    </h1> */}
                   </div>
                 </div>
               ))
