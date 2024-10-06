@@ -22,7 +22,7 @@ const AdminNavbar = () => {
         </div>
 
         {/* Links de navegação */}
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap justify-center md:justify-normal items-center gap-6">
           {navItems.map((item, index) => {
             const isActive =
               pathname === item.path ||

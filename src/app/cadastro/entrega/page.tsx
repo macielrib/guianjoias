@@ -7,23 +7,23 @@ const Endereco = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = (event: { preventDefault: () => void }) => {
-    event.preventDefault(); 
+    event.preventDefault();
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const [cep, setCep] = useState('');
+  const [cep, setCep] = useState("");
 
-  const handleChange = (e: { target: { value: string; }; }) => {
+  const handleChange = (e: { target: { value: string } }) => {
     const input = e.target.value;
     // Remove caracteres não numéricos
-    const numbers = input.replace(/\D/g, '');
+    const numbers = input.replace(/\D/g, "");
 
     // Formata o CEP no formato XXXXX-XXX
-    const formattedCep = numbers.replace(/(\d{5})(\d{0,3})/, '$1-$2');
+    const formattedCep = numbers.replace(/(\d{5})(\d{0,3})/, "$1-$2");
 
     setCep(formattedCep);
   };
-  
+
   return (
     <>
       {/* Background Radial */}
@@ -60,7 +60,7 @@ const Endereco = () => {
                 <div className="flex items-center justify-center z-20 w-12 h-12 lg:w-16 lg:h-16 bg-[#ECC923] text-[#3E210A] rounded-full font-poppins text-xl lg:text-2xl font-bold">
                   01
                 </div>
-                <p className="text-[#ECC923] mt-2 font-poppins font-medium text-md">
+                <p className="text-[#ECC923] mt-2 font-poppins font-medium text-xs md:text-lg">
                   Dados pessoais
                 </p>
               </div>
@@ -73,7 +73,7 @@ const Endereco = () => {
                 <div className="flex items-center justify-center z-20 w-12 h-12 lg:w-16 lg:h-16 bg-[#ECC923] text-[#3E210A] rounded-full font-poppins text-xl lg:text-2xl font-bold">
                   02
                 </div>
-                <p className="text-[#ECC923] mt-2 font-poppins font-medium text-md">
+                <p className="text-[#ECC923] mt-2 font-poppins font-medium text-xs md:text-lg">
                   Dados de entrega
                 </p>
               </div>
@@ -94,7 +94,7 @@ const Endereco = () => {
             {/* Formulário */}
             <form className="space-y-5 items-center lg:items-start mx-auto justify-center text-center flex flex-col">
               {/* Input de Endereço de Entrega */}
-              <div className="relative flex items-center  lg:items-start flex-col w-full lg:max-w-[458px] lg:w-[458px] lg:px-0  px-4">
+              <div className="relative flex items-center  lg:items-start flex-col w-full max-w-[290px] lg:max-w-[458px] lg:w-[458px] lg:px-0  px-4">
                 <p className="font-poppins font-light text-white text-md mb-3 ml-2">
                   Endereço de entrega
                 </p>
@@ -109,55 +109,54 @@ const Endereco = () => {
               </div>
 
               {/* Inputs de CEP e Estado lado a lado */}
-              <div className="flex justify-start items-center w-full space-x-8">
+              <div className="flex flex-col md:flex-row justify-start items-center w-full space-x-8 mb-2">
                 {/* Input para Número do CEP */}
                 <div className="flex flex-col items-start text-start w-full max-w-[290px]">
                   <p className="font-poppins font-light text-white text-md mb-3 ml-2">
                     Número do CEP para entrega
                   </p>
                   <input
-        type="text"
-        placeholder="Apenas números"
-        value={cep}
-        onChange={handleChange}
-        maxLength={9} // Limita o número máximo de caracteres
-        className="border-2 max-h-10 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-3 lg:pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-full focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
-      />
+                    type="text"
+                    placeholder="Apenas números"
+                    value={cep}
+                    onChange={handleChange}
+                    maxLength={9} // Limita o número máximo de caracteres
+                    className="border-2 max-h-10 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-3 lg:pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-full focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
+                  />
                 </div>
 
                 {/* Dropdown para Escolha do Estado */}
-                <div className="flex flex-col  relative">
-                  <p className="font-poppins font-light text-white text-sm md:text-md mb-3 ml-2">
+                <div className="flex text-start md:text-center !mr-8 md:mr-0 flex-col  relative">
+                  <p className="font-poppins font-light text-white text-sm md:text-md mt-3 md:mt-0 mb-3 ml-2">
                     Escolha o estado
                   </p>
                   <div className="relative mt-1">
                     <button
                       onClick={toggleDropdown}
-                      className="text-white border-2 max-h-10 !border-[#4F4F4F] rounded-xl py-6 px-4 flex justify-between items-center w-full focus:outline-none"
+                      className="text-white  border-2 max-h-10 !border-[#4F4F4F] rounded-xl py-6 px-4 flex justify-between items-center w-[216px] md:w-full focus:outline-none"
                     >
                       <span className="font-poppins text-md">Estado</span>
                       <FaChevronDown className="text-white text-xs ml-auto" />
                     </button>
                     {isDropdownOpen && (
-  <div className="absolute mt-2 w-full bg-[#1D1D1D] rounded-xl shadow-lg overflow-hidden">
-    <ul className="text-white font-poppins text-sm transition-all duration-300 ease-in-out">
-      <li className="py-3 px-4 hover:bg-[#282828] cursor-pointer transition-colors duration-200 ease-in-out">
-        São Paulo
-      </li>
-      <li className="py-3 px-4 hover:bg-[#282828] cursor-pointer transition-colors duration-200 ease-in-out whitespace-nowrap">
-        Rio de Janeiro
-      </li>
-      <li className="py-3 px-4 hover:bg-[#282828] cursor-pointer transition-colors duration-200 ease-in-out">
-        Minas Gerais
-      </li>
-    </ul>
-  </div>
-)}
-
+                      <div className="absolute z-50 mt-2 w-full bg-[#1D1D1D] rounded-xl shadow-lg overflow-hidden">
+                        <ul className="text-white font-poppins text-sm transition-all duration-300 ease-in-out">
+                          <li className="py-3 px-4 hover:bg-[#282828] cursor-pointer transition-colors duration-200 ease-in-out">
+                            São Paulo
+                          </li>
+                          <li className="py-3 px-4 hover:bg-[#282828] cursor-pointer transition-colors duration-200 ease-in-out whitespace-nowrap">
+                            Rio de Janeiro
+                          </li>
+                          <li className="py-3 px-4 hover:bg-[#282828] cursor-pointer transition-colors duration-200 ease-in-out">
+                            Minas Gerais
+                          </li>
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
-              <div className="flex justify-start items-center  w-full space-x-8">
+              <div className="flex flex-col md:flex-row justify-start items-center  w-full space-x-8">
                 {/* Input para Número do CEP */}
                 <div className="relative flex flex-col items-start text-start w-full max-w-[216px]">
                   <p className="font-poppins font-light text-white text-md mb-3 ml-2">
@@ -170,7 +169,7 @@ const Endereco = () => {
                   />
 
                   {/* Checkbox posicionado sem alterar a altura */}
-                  <div className="absolute mt-2 -bottom-8 flex flex-col items-start px-2">
+                  <div className="absolute -bottom-8 mt-2  flex flex-col items-start px-2">
                     <label className="flex items-center text-sm font-poppins text-[#FDFBE9]">
                       <input type="checkbox" className="custom-checkbox" />
                       <span className="ml-2 font-poppins font-light text-sm">
@@ -181,7 +180,7 @@ const Endereco = () => {
                 </div>
 
                 {/* Input para Escolha do Estado */}
-                <div className="flex flex-col items-start text-start w-full max-w-[216px]">
+                <div className="flex flex-col !mr-10 md:mr-0 items-start mt-12 md:mt-1 text-start w-full max-w-[216px]">
                   <p className="font-poppins font-light text-white text-sm md:text-md mb-3 ml-2">
                     Qual é a sua cidade?
                   </p>
@@ -192,7 +191,7 @@ const Endereco = () => {
                   />
                 </div>
               </div>
-              <div className="!mt-14 !mr-6  flex items-start  text-start  lg:items-start flex-col w-full lg:max-w-[458px] lg:w-[458px] lg:px-0  px-4">
+              <div className="md:!mt-14 md:!mr-6  flex items-start  text-start  lg:items-start flex-col w-full lg:max-w-[458px] lg:w-[458px] lg:px-0  px-4">
                 <p className="font-poppins font-light text-white text-md mb-3 ml-2">
                   Complemento (Opcional)
                 </p>
@@ -202,12 +201,12 @@ const Endereco = () => {
                   className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-full lg:max-w-full h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
                 />
                 <p className="font-poppins text-xs font-normal text-[#4F4F4F] py-2 px-2">
-                Ex: 8º andar, apartamento 6.
+                  Ex: 8º andar, apartamento 6.
                 </p>
               </div>
               <button
                 type="submit"
-                className="bg-[#F2DD52] flex items-center text-center justify-center text-black font-poppins  font-medium text-[15px] w-[297px] h-[52px] mt-6 rounded-full transition-opacity hover:opacity-90"
+                className="bg-[#F2DD52] flex items-center text-center justify-center text-black font-poppins  font-medium text-[15px] w-[258px] md:w-[297px] h-[52px] mt-6 rounded-full transition-opacity hover:opacity-90"
               >
                 Completar registro
               </button>

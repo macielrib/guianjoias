@@ -76,7 +76,7 @@ const CardProduct: React.FC<{ product: (typeof products)[0] }> = ({
         alt={product.name}
         width={250}
         height={250}
-        className="mb-4 object-contain"
+        className="mb-4 object-contain w-full"
       />
       <h3 className="text-lg font-poppins mb-2 text-left">{product.name}</h3>
       <p className="text-sm text-[#4F4F4F] font-poppins line-through text-left">

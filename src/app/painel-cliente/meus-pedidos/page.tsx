@@ -269,7 +269,7 @@ const MeusPedidos = () => {
                     {/* <button className="py-3 px-6 bg-[#F2DD52] text-black items-center font-medium text-center font-poppins text-sm rounded-full">
                       Eu recebi o produto
                     </button> */}
-                    <button className="py-3 px-4 md:px-6 mb-2 md:mb-0 bg-[#4F4F4F] text-black items-center font-medium text-center font-poppins text-sm rounded-full">
+                    <button className="py-3 mx-auto md:mx-0 px-4 md:px-6 mb-2 md:mb-0 bg-[#4F4F4F] text-black items-center font-medium text-center font-poppins text-sm rounded-full">
                       Eu recebi o produto
                     </button>
                   </div>

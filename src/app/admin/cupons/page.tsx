@@ -100,7 +100,7 @@ const CuponsPromocionais = () => {
         {/* Card Criar Cupom e Listagem de Cupons */}
         <div className="flex flex-col lg:flex-row w-full  gap-6 items-center md:items-center justify-start">
           {/* Card Criar Cupom */}
-          <div className="flex flex-col md:ml-16 w-full max-w-[340px] h-full max-h-[545px] rounded-lg bg-[#171717]">
+          <div className="flex flex-col md:ml-16 w-full max-w-[280px] md:max-w-[340px] h-full max-h-[545px] rounded-lg bg-[#171717]">
             <div className="flex flex-col py-6 px-6 items-start justify-start">
               <h1 className="font-poppins text-white font-normal text-xl mb-4">
                 Criar cupom
@@ -109,7 +109,7 @@ const CuponsPromocionais = () => {
                 <input
                   type="text"
                   placeholder="Digite o nome"
-                  className="border !border-[#4F4F4F] bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-[190px] sm:w-[240px] md:w-[270px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+                  className="border !border-[#4F4F4F] bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-[210px] sm:w-[240px] md:w-[270px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
                   maxLength={9}
                 />
               </div>
@@ -126,13 +126,13 @@ const CuponsPromocionais = () => {
                 <input
                   type="text"
                   placeholder="Duração (dias)"
-                  className="border !border-[#4F4F4F] mb-4 bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-[190px] sm:w-[240px] md:w-[270px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+                  className="border !border-[#4F4F4F] mb-4 bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-[210px] sm:w-[240px] md:w-[270px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
                   maxLength={9}
                 />
               </div>
               <Link
                 href={"#"}
-                className="py-3 px-4 w-full max-w-[12rem] mb-4 rounded-full mx-auto text-center bg-[#F2DD52] text-black font-poppins font-medium transition duration-300 hover:-translate-y-1 text-sm"
+                className="py-3 px-4 w-full max-w-[12rem] mb-4 rounded-full lg:mx-auto text-center bg-[#F2DD52] text-black font-poppins font-medium transition duration-300 hover:-translate-y-1 text-sm"
               >
                 Criar cupom
               </Link>

@@ -3,21 +3,20 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserShield } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import CartSidebar from "../CartSidebar";
 
 const NavbarMobile = () => {
-
+  const [isLoggedIn, ] = useState(false);  //aqui vc altera para aparecer o icone de admin ou nao no mobile admin
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
-  
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -71,54 +70,31 @@ const NavbarMobile = () => {
           </div>
 
           <nav className="flex flex-col gap-4 items-center z-40">
-            <Link
-              href="/"
-              className="text-lg font-poppins text-[#F2DD52]"
-            >
+            <Link href="/" className="text-lg font-poppins text-[#F2DD52]">
               Início
             </Link>
-            <Link
-              href="/catalogo"
-              className="text-lg font-poppins text-[#F2DD52]"
-            >
+            <Link href="/catalogo" className="text-lg font-poppins text-[#F2DD52]">
               Catálogo
             </Link>
-            <Link
-              href="/catalogo"
-              className="text-lg font-poppins text-[#F2DD52]"
-            >
+            <Link href="/catalogo" className="text-lg font-poppins text-[#F2DD52]">
               Lançamentos
             </Link>
-            <Link
-              href="/catalogo"
-              className="text-lg font-poppins text-[#F2DD52]"
-            >
+            <Link href="/catalogo" className="text-lg font-poppins text-[#F2DD52]">
               Pulseiras
             </Link>
-            <Link
-              href="/catalogo"
-              className="text-lg font-poppins text-[#F2DD52]"
-            >
+            <Link href="/catalogo" className="text-lg font-poppins text-[#F2DD52]">
               Correntes
             </Link>
-            <Link
-              href="/catalogo"
-              className="text-lg font-poppins text-[#F2DD52]"
-            >
+            <Link href="/catalogo" className="text-lg font-poppins text-[#F2DD52]">
               Escapulários
             </Link>
-            <Link
-              href="/catalogo"
-              className="text-lg font-poppins text-[#F2DD52]"
-            >
+            <Link href="/catalogo" className="text-lg font-poppins text-[#F2DD52]">
               Brincos
             </Link>
           </nav>
 
           <div className="mt-6 flex gap-4 items-center z-40">
-          <button
-              onClick={toggleCart}
-              className="flex items-center">
+            <button onClick={toggleCart} className="flex items-center">
               <span className="bg-[#F2DD52] rounded-full p-4 flex items-center justify-center">
                 <IoBagHandleOutline className="text-black w-4 h-4" />
               </span>
@@ -126,14 +102,22 @@ const NavbarMobile = () => {
 
             <CartSidebar isOpen={isCartOpen} toggleCart={toggleCart} />
 
-            <Link href="/entrar" className="flex items-center">
-              <span className="bg-[#F2DD52] rounded-full p-4 flex items-center justify-center">
-                <FaUser className="text-black w-4 h-4" />
-              </span>
-            </Link>
+            {isLoggedIn ? (
+              <Link href="/painel-do-cliente" className="flex items-center">
+                <span className="bg-[#F2DD52] rounded-full p-4 flex items-center justify-center">
+                  <FaUserShield className="text-black w-4 h-4" />
+                </span>
+              </Link>
+            ) : (
+              <Link href="/entrar" className="flex items-center">
+                <span className="bg-[#F2DD52] rounded-full p-4 flex items-center justify-center">
+                  <FaUser className="text-black w-4 h-4" />
+                </span>
+              </Link>
+            )}
           </div>
         </div>
-      
+
         {isDrawerOpen && (
           <div
             className="fixed inset-0 bg-black opacity-50 z-30"

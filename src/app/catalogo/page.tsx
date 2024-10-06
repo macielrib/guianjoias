@@ -203,7 +203,10 @@ const Catalogo = () => {
                   "Escapulários",
                   "Brincos",
                 ].map((category) => (
-                  <div key={category} className="flex items-center space-x-3 text-lg">
+                  <div
+                    key={category}
+                    className="flex items-center space-x-3 text-lg"
+                  >
                     <input
                       id={category}
                       type="checkbox"
@@ -223,7 +226,10 @@ const Catalogo = () => {
                         <FaCheck className="text-xs text-black" />
                       )}
                     </label>
-                    <span className="text-white font-poppins font-light text-md">
+                    <span
+                      className="text-white font-poppins font-light text-md"
+                      style={{ userSelect: "none" }} // Prevent text selection
+                    >
                       {category}
                     </span>
                   </div>

@@ -28,7 +28,7 @@ const ProductsAndCategories = () => {
   return (
     <>
       <div className="flex flex-col -mt-8 px-4 items-center w-full">
-        <div className="bg-[#F2DD52] hidden md:block rounded-md w-full max-w-6xl md:w-[70rem] h-4 md:ml-16 mt-4"></div>
+        <div className="bg-[#F2DD52] hidden md:block rounded-md w-full max-w-2xl lg:max-w-5xl xl:max-w-6xl h-4 md:ml-16 mt-4"></div>
         {/* Badge: Você está gerenciando... */}
         <div className="w-full max-w-5xl bg-transparent text-center md:text-start py-2 rounded-lg mt-4 flex flex-col md:flex-row items-center gap-3 justify-start">
           <BsPatchCheckFill className="text-[#F2DD52] text-2xl sm:text-xl" />
@@ -50,9 +50,9 @@ const ProductsAndCategories = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row md:ml-36 gap-8 py-2 px-4 items-center md:items-start justify-center">
+      <div className="flex flex-col md:flex-row xl:ml-36 gap-8 py-2 px-4 items-center md:items-start justify-center">
         {/* Card de Criar Categoria */}
-        <div className="flex flex-col w-full max-w-[340px] h-full max-h-[545px] rounded-lg bg-[#171717]">
+        <div className="flex flex-col w-full max-w-[300px] md:max-w-[340px] h-full max-h-[545px] rounded-lg bg-[#171717]">
           <div className="flex flex-col py-6 px-6 items-start justify-start">
             <h1 className="font-poppins text-white font-normal text-xl mb-4">
               Criar categoria
@@ -61,7 +61,7 @@ const ProductsAndCategories = () => {
               <input
                 type="text"
                 placeholder="Nome da categoria"
-                className="border !border-[#4F4F4F] bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm w-[210px] md:w-[240px] lg:w-[270px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
+                className="border !border-[#4F4F4F] bg-transparent rounded-full py-4 px-3 pl-10 text-[#4F4F4F] placeholder:text-[#4F4F4F] font-poppins font-normal text-sm  w-[250px] sm:!w-[250px] md:!w-[290px] lg:w-[297px] h-[48px] focus:border-[#F2DD52] focus:outline-none transition duration-300"
                 maxLength={9} // Limita a entrada a 9 caracteres
               />
             </div>
@@ -116,7 +116,7 @@ const ProductsAndCategories = () => {
         {/* Seção de Produtos na Categoria */}
         <div className="flex flex-col w-full max-w-[800px]">
         <div className="flex flex-col w-full max-w-[800px]">
-          <div className="flex flex-col items-center  md:flex-row justify-between py-2 px-2 mx-auto md:mx-0 text-center md:text-start">
+          <div className="flex flex-col items-center  lg:flex-row justify-between py-2 px-2 mx-auto md:mx-0 text-center md:text-start">
             <h1 className="font-poppins text-white mx-auto font-normal text-xl mb-4">
               Produtos na categoria{" "}
               <span className="text-[#F2DD52]">&quot;Nome da Categoria&quot;</span>
