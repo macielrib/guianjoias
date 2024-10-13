@@ -61,7 +61,7 @@ const CardProduct: React.FC<{ product: (typeof products)[0] }> = ({
   product,
 }) => {
   return (
-    <div className="bg-[#0B0B0B] rounded-md w-[300px] h-[460px] flex flex-col items-start justify-start p-4 transition duration-300 transform border border-transparent hover:border-[#212020]">
+    <div className="bg-[#0B0B0B] rounded-md w-full max-w-[280px] h-[460px] flex flex-col items-start justify-start p-4 transition duration-300 transform border border-transparent hover:border-[#212020]">
       <Image
         src={product.image}
         alt={product.name}
@@ -240,7 +240,7 @@ const Catalogo = () => {
         </div>
 
         {/* Catálogo de Produtos */}
-        <div className="w-full lg:w-3/4 ml-6">
+        <div className="w-full lg:w-3/4 md:ml-6">
           <div className="flex flex-col lg:flex-row justify-between items-start mb-6">
             <h1 className="text-white text-2xl font-poppins font-light">
               Catálogo de produtos

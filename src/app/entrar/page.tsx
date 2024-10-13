@@ -77,20 +77,11 @@ const Entrar = () => {
                 <input
                   type="text"
                   placeholder="Digite o seu E-mail"
-                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
+                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-full max-w-[458px] md:w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
                 />
               </div>
 
-              <div className="relative flex items-center lg:items-start flex-col">
-                <p className="font-poppins font-light text-white text-md mb-3 ml-2">
-                  Senha da sua conta
-                </p>
-                <input
-                  type="email"
-                  placeholder="Uma senha forte"
-                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
-                />
-              </div>
+       
 
               <div className="relative flex items-center lg:items-start flex-col">
                 <p className="font-poppins font-light text-white text-md mb-3 ml-2">
@@ -99,7 +90,7 @@ const Entrar = () => {
                 <input
                   type="password"
                   placeholder="Uma senha forte"
-                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
+                  className="border-2 !border-[#4F4F4F] bg-transparent rounded-xl py-6 pl-6 placeholder:text-[#4F4F4F] text-[#4F4F4F] font-poppins font-normal text-md  w-full max-w-[458px] md:w-[458px] h-[48px] focus:!border-[#4F4F4F] focus:outline-none transition duration-300"
                 />
               </div>
 
@@ -107,13 +98,13 @@ const Entrar = () => {
 
               <button
                 type="submit"
-                className="bg-[#F2DD52] flex items-center text-center justify-center lg:mx-auto lg:ml-20  text-black font-poppins  font-medium text-[15px] w-[297px] h-[52px] mt-6 rounded-full transition-opacity hover:opacity-90"
+                className="bg-[#F2DD52] flex items-center text-center justify-center lg:mx-auto lg:ml-20  text-black font-poppins  font-medium text-[15px] w-full max-w-[297px] h-[52px] mt-6 rounded-full transition-opacity hover:opacity-90"
               >
                 Fazer login agora
               </button>
             </form>
 
-            <p className="mr-24 mt-4 text-[#6F6F6F] flex items-center gap-2 justify-center font-poppins font-light text-sm">
+            <p className="w-full md:max-w-md mt-4 text-[#6F6F6F] flex flex-col md:flex-row items-center gap-2 justify-center font-poppins font-light text-sm">
                     Ainda não tem conta?
                     <a href="/entrar" className="text-[#F2DD52] ">
                       Criar uma Conta
